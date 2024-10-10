@@ -1,0 +1,193 @@
+CollectionYearRange,Parent_Org_Code,Parent_Org_Name,Org_Code,Org_Name,Unit_Name,Org_Type,Part,Total_biopsies,<=2_weeks,>2_weeks_up_to_4,>4_weeks_up_to_8,>8_weeks_up_to_12,>12_weeks,Percent_outcome_within_8wks
+2022-23,E92000001,England,E92000001,England,England,National,D,54162.0,15856.0,24065.0,12350.0,1340.0,551.0,96.50862228130424
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,North East and Yorkshire,Region,D,7758.0,2851.0,3168.0,1599.0,110.0,30.0,98.19541118845063
+2022-23,N2,North West,N2,North West,North West,Region,D,5927.0,1366.0,2653.0,1647.0,171.0,90.0,95.59642314830437
+2022-23,N3,Midlands,N3,Midlands,Midlands,Region,D,7880.0,1970.0,3711.0,1796.0,314.0,89.0,94.88578680203045
+2022-23,N4,East of England,N4,East of England,East of England,Region,D,4280.0,1341.0,1945.0,911.0,74.0,9.0,98.06074766355141
+2022-23,N5,London,N5,London,London,Region,D,14363.0,3922.0,6680.0,3176.0,423.0,162.0,95.92703474204554
+2022-23,N6,South East,N6,South East,South East,Region,D,5946.0,1382.0,2311.0,1963.0,135.0,155.0,95.12277161116717
+2022-23,N7,South West,N7,South West,South West,Region,D,8008.0,3024.0,3597.0,1258.0,113.0,16.0,98.38911088911088
+2022-23,N1,North East and Yorkshire,RCF,Airedale NHS Foundation Trust,Airedale General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RFF,Barnsley Hospital NHS Foundation Trust,Barnsley Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RAE,Bradford Teaching Hospitals NHS Foundation Trust,Bradford Royal Infirmary,Trust,D,not included,not included,not included,not included,not included,not included,98.24561403508771
+2022-23,N1,North East and Yorkshire,RWY,Calderdale and Huddersfield NHS Foundation Trust,Calderdale Royal Hospital,Trust,D,not included,not included,not included,not included,not included,not included,91.62995594713657
+2022-23,N1,North East and Yorkshire,RWY,Calderdale and Huddersfield NHS Foundation Trust,Huddersfield Royal Infirmary,Trust,D,not included,not included,not included,not included,not included,not included,95.23809523809523
+2022-23,N1,North East and Yorkshire,RXP,County Durham and Darlington NHS Foundation Trust,Bishop Auckland General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,96.44444444444444
+2022-23,N1,North East and Yorkshire,RXP,County Durham and Darlington NHS Foundation Trust,Chester-Le-Street Community Hospital,Trust,D,not included,not included,not included,not included,not included,not included,90.78947368421053
+2022-23,N1,North East and Yorkshire,RXP,County Durham and Darlington NHS Foundation Trust,Darlington Memorial Hospital,Trust,D,not included,not included,not included,not included,not included,not included,97.5
+2022-23,N1,North East and Yorkshire,RXP,County Durham and Darlington NHS Foundation Trust,HMP Low Newton,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RXP,County Durham and Darlington NHS Foundation Trust,Shotley Bridge Community Hospital,Trust,D,not included,not included,not included,not included,not included,not included,97.32620320855615
+2022-23,N1,North East and Yorkshire,RP5,Doncaster and Bassetlaw Teaching Hospitals NHS Foundation Trust,Bassetlaw Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RP5,Doncaster and Bassetlaw Teaching Hospitals NHS Foundation Trust,Doncaster Royal Infirmary,Trust,D,not included,not included,not included,not included,not included,not included,99.67845659163987
+2022-23,N1,North East and Yorkshire,RR7,Gateshead Health NHS Foundation Trust,Queen Elizabeth Hospital,Trust,D,not included,not included,not included,not included,not included,not included,95.85987261146497
+2022-23,N1,North East and Yorkshire,RCD,Harrogate and District NHS Foundation Trust,Harrogate District Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RWA,Hull University Teaching Hospitals NHS Trust,Hull Royal Infirmary,Trust,D,not included,not included,not included,not included,not included,not included,91.61147902869757
+2022-23,N1,North East and Yorkshire,RR8,Leeds Teaching Hospitals NHS Trust,St James's University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.75346260387812
+2022-23,N1,North East and Yorkshire,RR8,Leeds Teaching Hospitals NHS Trust,Wharfedale Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.50746268656717
+2022-23,N1,North East and Yorkshire,RXF,Mid Yorkshire Hospitals NHS Trust,Dewsbury and District Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RXF,Mid Yorkshire Hospitals NHS Trust,Pontefract Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RVW,North Tees and Hartlepool NHS Foundation Trust,University Hospital of Hartlepool,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RVW,North Tees and Hartlepool NHS Foundation Trust,University Hospital of North Tees,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RJL,Northern Lincolnshire and Goole NHS Foundation Trust,Diana Princess of Wales Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.9010989010989
+2022-23,N1,North East and Yorkshire,RJL,Northern Lincolnshire and Goole NHS Foundation Trust,Goole and District Hospital,Trust,D,not included,not included,not included,not included,not included,not included,95.0
+2022-23,N1,North East and Yorkshire,RJL,Northern Lincolnshire and Goole NHS Foundation Trust,Scunthorpe General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,91.47727272727273
+2022-23,N1,North East and Yorkshire,RTF,Northumbria Healthcare NHS Foundation Trust,Hexham General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RTF,Northumbria Healthcare NHS Foundation Trust,North Tyneside General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RTF,Northumbria Healthcare NHS Foundation Trust,Wansbeck General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RHQ,Sheffield Teaching Hospitals NHS Foundation Trust,Jessop Wing,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RTR,South Tees Hospitals NHS Foundation Trust,Friarage Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RTR,South Tees Hospitals NHS Foundation Trust,James Cook University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.69418960244649
+2022-23,N1,North East and Yorkshire,R0B,South Tyneside and Sunderland NHS Foundation Trust,South Tyneside District Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,R0B,South Tyneside and Sunderland NHS Foundation Trust,Sunderland Royal Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RTD,The Newcastle Upon Tyne Hospitals NHS Foundation Trust,Royal Victoria Infirmary,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RFR,The Rotherham NHS Foundation Trust,Rotherham Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.37662337662337
+2022-23,N1,North East and Yorkshire,RCB,York Teaching Hospital NHS Foundation Trust,Bridlington and District Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RCB,York Teaching Hospital NHS Foundation Trust,Scarborough General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N1,North East and Yorkshire,RCB,York Teaching Hospital NHS Foundation Trust,York Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N2,North West,RXL,Blackpool Teaching Hospitals NHS Foundation Trust,Blackpool Victoria Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.36601307189542
+2022-23,N2,North West,RMC,Bolton NHS Foundation Trust,Royal Bolton Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N2,North West,RXR,East Lancashire Hospitals NHS Trust,Burnley General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,93.19371727748691
+2022-23,N2,North West,RXN,Lancashire Teaching Hospitals NHS Foundation Trust,Royal Preston Hospital & Chorley and South Ribble District General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,93.37979094076655
+2022-23,N2,North West,REP,Liverpool Women's NHS Foundation Trust,Liverpool Women's Hospital,Trust,D,not included,not included,not included,not included,not included,not included,97.25400457665904
+2022-23,N2,North West,REP,Liverpool Women's NHS Foundation Trust,University Hospital Aintree,Trust,D,not included,not included,not included,not included,not included,not included,97.84946236559139
+2022-23,N2,North West,R0A,Manchester University NHS Foundation Trust,North Manchester General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,94.62809917355372
+2022-23,N2,North West,R0A,Manchester University NHS Foundation Trust,Saint Mary's Hospital,Trust,D,not included,not included,not included,not included,not included,not included,94.35336976320583
+2022-23,N2,North West,RBT,Mid Cheshire Hospitals NHS Foundation Trust,Leighton Hospital,Trust,D,not included,not included,not included,not included,not included,not included,95.65217391304348
+2022-23,N2,North West,RNN,North Cumbria Integrated Care NHS Foundation Trust,Cumberland Infirmary,Trust,D,not included,not included,not included,not included,not included,not included,98.4126984126984
+2022-23,N2,North West,RM3,Northern Care Alliance NHS Foundation Trust,Fairfield General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.07407407407408
+2022-23,N2,North West,RM3,Northern Care Alliance NHS Foundation Trust,Salford Royal Hospital,Trust,D,not included,not included,not included,not included,not included,not included,84.14096916299559
+2022-23,N2,North West,RVY,Southport and Ormskirk Hospital NHS Trust,"Southport, Formby and Ormskirk District General Hospitals",Trust,D,not included,not included,not included,not included,not included,not included,99.0521327014218
+2022-23,N2,North West,RBN,ST HELENS AND KNOWSLEY TEACHING HOSPITALS NHS TRUST,Whiston Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.01980198019803
+2022-23,N2,North West,RWJ,Stockport NHS Foundation Trust,Stepping Hill Hospital,Trust,D,not included,not included,not included,not included,not included,not included,82.20858895705521
+2022-23,N2,North West,RMP,Tameside and Glossop Integrated Care NHS Foundation Trust,Tameside General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,92.56198347107438
+2022-23,N2,North West,RTX,University Hospitals of Morecambe Bay NHS Foundation Trust,"Royal Lancaster Infirmary, Furness General and Westmorland General Hospitals",Trust,D,not included,not included,not included,not included,not included,not included,94.51612903225806
+2022-23,N2,North West,RWW,Warrington and Halton Teaching Hospitals NHS Foundation Trust,Warrington Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.57081545064378
+2022-23,N2,North West,RBL,Wirral University Teaching Hospital NHS Foundation Trust,Arrowe Park Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.54337899543378
+2022-23,N2,North West,RRF,"Wrightington, Wigan and Leigh NHS Foundation Trust",Leigh Infirmary,Trust,D,not included,not included,not included,not included,not included,not included,98.61495844875347
+2022-23,N3,Midlands,RQ3,Birmingham Women's and Children's NHS Foundation Trust,Birmingham Women's Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.31972789115646
+2022-23,N3,Midlands,RFS,Chesterfield Royal Hospital NHS Foundation Trust,Chesterfield Royal Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N3,Midlands,RY8,Derbyshire Community Health Services NHS Foundation Trust,Buxton Medical Centre,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N3,Midlands,RY8,Derbyshire Community Health Services NHS Foundation Trust,Ilkeston Community Hospital,Trust,D,not included,not included,not included,not included,not included,not included,97.05882352941177
+2022-23,N3,Midlands,RLT,George Eliot Hospital NHS Trust,George Eliot Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.39393939393939
+2022-23,N3,Midlands,RNQ,Kettering General Hospital NHS Foundation Trust,Kettering General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,96.96969696969697
+2022-23,N3,Midlands,RNS,Northampton General Hospital NHS Trust,Northampton General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,96.93486590038314
+2022-23,N3,Midlands,RX1,Nottingham University Hospitals NHS Trust,Circle Nottingham NHS Treatment Centre,Trust,D,not included,not included,not included,not included,not included,not included,76.75675675675676
+2022-23,N3,Midlands,RX1,Nottingham University Hospitals NHS Trust,Nottingham City Hospital,Trust,D,not included,not included,not included,not included,not included,not included,92.77899343544857
+2022-23,N3,Midlands,RXK,Sandwell and West Birmingham Hospitals NHS Trust,"City Hospital, Birmingham",Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N3,Midlands,RXK,Sandwell and West Birmingham Hospitals NHS Trust,Sandwell General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.13793103448276
+2022-23,N3,Midlands,RK5,Sherwood Forest Hospitals NHS Foundation Trust,King's Mill Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N3,Midlands,RK5,Sherwood Forest Hospitals NHS Foundation Trust,Newark Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N3,Midlands,RXW,Shrewsbury and Telford Hospital NHS Trust,Princess Royal Hospital,Trust,D,not included,not included,not included,not included,not included,not included,74.60317460317461
+2022-23,N3,Midlands,RXW,Shrewsbury and Telford Hospital NHS Trust,Royal Shrewsbury Hospital,Trust,D,not included,not included,not included,not included,not included,not included,72.15189873417721
+2022-23,N3,Midlands,RJC,South Warwickshire NHS Foundation Trust,Warwick Hospital,Trust,D,not included,not included,not included,not included,not included,not included,96.63299663299664
+2022-23,N3,Midlands,RNA,The Dudley Group NHS Foundation Trust,Russells Hall Hospital,Trust,D,not included,not included,not included,not included,not included,not included,97.63313609467455
+2022-23,N3,Midlands,RL4,The Royal Wolverhampton NHS Trust,New Cross Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N3,Midlands,RWD,United Lincolnshire Hospitals NHS Trust,Lincoln County Hospital,Trust,D,not included,not included,not included,not included,not included,not included,92.81767955801105
+2022-23,N3,Midlands,RWD,United Lincolnshire Hospitals NHS Trust,Pilgrim Hospital Boston,Trust,D,not included,not included,not included,not included,not included,not included,99.12280701754386
+2022-23,N3,Midlands,RRK,University Hospitals Birmingham NHS Foundation Trust,Birmingham Heartlands Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.82352941176471
+2022-23,N3,Midlands,RRK,University Hospitals Birmingham NHS Foundation Trust,Good Hope Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.2831541218638
+2022-23,N3,Midlands,RRK,University Hospitals Birmingham NHS Foundation Trust,Solihull Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.1869918699187
+2022-23,N3,Midlands,RKB,University Hospitals Coventry and Warwickshire NHS Trust,"Hospital of St Cross, Rugby",Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N3,Midlands,RKB,University Hospitals Coventry and Warwickshire NHS Trust,"University Hospital, Coventry",Trust,D,not included,not included,not included,not included,not included,not included,99.68847352024922
+2022-23,N3,Midlands,RTG,University Hospitals of Derby and Burton NHS Foundation Trust,"Queen's Hospital, Burton",Trust,D,not included,not included,not included,not included,not included,not included,97.57281553398059
+2022-23,N3,Midlands,RTG,University Hospitals of Derby and Burton NHS Foundation Trust,Royal Derby Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.3633387888707
+2022-23,N3,Midlands,RTG,University Hospitals of Derby and Burton NHS Foundation Trust,Sir Robert Peel Hospital,Trust,D,not included,not included,not included,not included,not included,not included,94.44444444444444
+2022-23,N3,Midlands,RWE,University Hospitals of Leicester NHS Trust,Leicester General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,87.19424460431655
+2022-23,N3,Midlands,RJE,University Hospitals of North Midlands NHS Trust,"County Hospital, Stafford",Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N3,Midlands,RJE,University Hospitals of North Midlands NHS Trust,Royal Stoke University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.24242424242425
+2022-23,N3,Midlands,RBK,Walsall Healthcare NHS Trust,Walsall Manor Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N3,Midlands,RWP,Worcestershire Acute Hospitals NHS Trust,Alexandra Hospital,Trust,D,not included,not included,not included,not included,not included,not included,86.61417322834646
+2022-23,N3,Midlands,RWP,Worcestershire Acute Hospitals NHS Trust,Kidderminster Hospital and Treatment Centre,Trust,D,not included,not included,not included,not included,not included,not included,81.25
+2022-23,N3,Midlands,RWP,Worcestershire Acute Hospitals NHS Trust,Worcestershire Royal Hospital,Trust,D,not included,not included,not included,not included,not included,not included,81.67539267015707
+2022-23,N3,Midlands,RLQ,Wye Valley NHS Trust,Hereford County Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RC9,Bedfordshire Hospitals NHS Foundation Trust,Bedford Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.0521327014218
+2022-23,N4,East of England,RC9,Bedfordshire Hospitals NHS Foundation Trust,Luton and Dunstable Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RGT,Cambridge University Hospitals NHS Foundation Trust,Addenbrooke's Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RWH,East and North Hertfordshire NHS Trust,Lister Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RDE,East Suffolk and North Essex NHS Foundation Trust,Colchester General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.51690821256038
+2022-23,N4,East of England,RDE,East Suffolk and North Essex NHS Foundation Trust,Ipswich Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RGP,James Paget University Hospitals NHS Foundation Trust,James Paget University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,96.15384615384616
+2022-23,N4,East of England,RAJ,Mid and South Essex NHS Foundation Trust,Basildon University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,95.67307692307693
+2022-23,N4,East of England,RAJ,Mid and South Essex NHS Foundation Trust,Broomfield Hospital,Trust,D,not included,not included,not included,not included,not included,not included,88.3495145631068
+2022-23,N4,East of England,RAJ,Mid and South Essex NHS Foundation Trust,Southend University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.64864864864865
+2022-23,N4,East of England,RD8,Milton Keynes University Hospital NHS Foundation Trust,Milton Keynes University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RM1,Norfolk and Norwich University Hospitals NHS Foundation Trust,Norfolk and Norwich University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,96.14855570839065
+2022-23,N4,East of England,RGN,North West Anglia NHS Foundation Trust,Hinchingbrooke Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RGN,North West Anglia NHS Foundation Trust,Peterborough City Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RGN,North West Anglia NHS Foundation Trust,Stamford Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RQW,The Princess Alexandra Hospital NHS Trust,Princess Alexandra Hospital,Trust,D,not included,not included,not included,not included,not included,not included,97.42268041237114
+2022-23,N4,East of England,RCX,"The Queen Elizabeth Hospital, King's Lynn, NHS Foundation Trust",The Queen Elizabeth Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RWG,West Hertfordshire Hospitals NHS Trust,St Albans City Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RWG,West Hertfordshire Hospitals NHS Trust,Watford General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N4,East of England,RGR,West Suffolk NHS Foundation Trust,West Suffolk Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N5,London,RF4,"Barking, Havering and Redbridge University Hospitals NHS Trust",King George Hospital,Trust,D,not included,not included,not included,not included,not included,not included,95.01718213058419
+2022-23,N5,London,R1H,Barts Health NHS Trust,Newham University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.78682842287695
+2022-23,N5,London,R1H,Barts Health NHS Trust,The Royal London Hospital,Trust,D,not included,not included,not included,not included,not included,not included,97.12837837837837
+2022-23,N5,London,R1H,Barts Health NHS Trust,Whipps Cross University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,83.33333333333334
+2022-23,N5,London,RQM,Chelsea and Westminster Hospital NHS Foundation Trust,Chelsea and Westminster Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N5,London,RQM,Chelsea and Westminster Hospital NHS Foundation Trust,West Middlesex University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N5,London,RJ6,Croydon Health Services NHS Trust,Croydon University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N5,London,RVR,Epsom and St Helier University Hospitals NHS Trust,St Helier Hospital,Trust,D,not included,not included,not included,not included,not included,not included,92.88389513108615
+2022-23,N5,London,RJ1,Guy's and St Thomas' NHS Foundation Trust,Guy's Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.42418426103646
+2022-23,N5,London,RQX,Homerton University Hospital NHS Foundation Trust,Homerton University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.94957983193278
+2022-23,N5,London,RYJ,Imperial College Healthcare NHS Trust,St Mary's Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N5,London,RJZ,King's College Hospital NHS Foundation Trust,King's College Hospital,Trust,D,not included,not included,not included,not included,not included,not included,97.96215429403202
+2022-23,N5,London,RJZ,King's College Hospital NHS Foundation Trust,Princess Royal University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,60.381861575178995
+2022-23,N5,London,RAX,Kingston Hospital NHS Foundation Trust,Kingston Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.87429643527204
+2022-23,N5,London,RJ2,Lewisham and Greenwich NHS Trust,Queen Elizabeth Hospital,Trust,D,not included,not included,not included,not included,not included,not included,z
+2022-23,N5,London,RJ2,Lewisham and Greenwich NHS Trust,University Hospital Lewisham,Trust,D,not included,not included,not included,not included,not included,not included,99.80824544582933
+2022-23,N5,London,R1K,London North West University Healthcare NHS Trust,Northwick Park Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.67776584317937
+2022-23,N5,London,RAP,North Middlesex University Hospital NHS Trust,North Middlesex University Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N5,London,RAL,Royal Free London NHS Foundation Trust,Barnet Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N5,London,RAL,Royal Free London NHS Foundation Trust,Chase Farm Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.43502824858757
+2022-23,N5,London,RAL,Royal Free London NHS Foundation Trust,The Royal Free Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.6737400530504
+2022-23,N5,London,RJ7,St George's University Hospitals NHS Foundation Trust,St George's Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.82332155477032
+2022-23,N5,London,RAS,The Hillingdon Hospitals NHS Foundation Trust,Hillingdon Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N5,London,RRV,University College London Hospitals NHS Foundation Trust,University College London Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.81796690307328
+2022-23,N5,London,RKE,Whittington Health NHS Trust,Whittington Hospital,Trust,D,not included,not included,not included,not included,not included,not included,91.51670951156812
+2022-23,N6,South East,RTK,Ashford and St Peter's Hospitals NHS Foundation Trust,St Peter's Hospital,Trust,D,not included,not included,not included,not included,not included,not included,86.06060606060606
+2022-23,N6,South East,RXQ,Buckinghamshire Healthcare NHS Trust,Wycombe Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.64850615114236
+2022-23,N6,South East,RN7,Dartford and Gravesham NHS Trust,Darent Valley Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N6,South East,RVV,East Kent Hospitals University NHS Foundation Trust,Buckland Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N6,South East,RVV,East Kent Hospitals University NHS Foundation Trust,Kent and Canterbury Hospital,Trust,D,not included,not included,not included,not included,not included,not included,95.37037037037037
+2022-23,N6,South East,RVV,East Kent Hospitals University NHS Foundation Trust,Queen Elizabeth The Queen Mother Hospital,Trust,D,not included,not included,not included,not included,not included,not included,92.5531914893617
+2022-23,N6,South East,RVV,East Kent Hospitals University NHS Foundation Trust,William Harvey Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N6,South East,RXC,East Sussex Healthcare NHS Trust,Conquest Hospital,Trust,D,not included,not included,not included,not included,not included,not included,91.80327868852459
+2022-23,N6,South East,RXC,East Sussex Healthcare NHS Trust,Eastbourne District General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,95.78313253012048
+2022-23,N6,South East,RVR,Epsom and St Helier University Hospitals NHS Trust,Leatherhead Hospital,Trust,D,not included,not included,not included,not included,not included,not included,92.50814332247556
+2022-23,N6,South East,RDU,Frimley Health NHS Foundation Trust,Frimley Park Hospital,Trust,D,not included,not included,not included,not included,not included,not included,88.48920863309353
+2022-23,N6,South East,RDU,Frimley Health NHS Foundation Trust,Wexham Park & Heatherwood,Trust,D,not included,not included,not included,not included,not included,not included,75.0
+2022-23,N6,South East,RWF,Maidstone and Tunbridge Wells NHS Trust,Maidstone Hospital,Trust,D,not included,not included,not included,not included,not included,not included,90.32258064516128
+2022-23,N6,South East,RWF,Maidstone and Tunbridge Wells NHS Trust,Tunbridge Wells Hospital,Trust,D,not included,not included,not included,not included,not included,not included,94.0
+2022-23,N6,South East,RPA,Medway NHS Foundation Trust,Medway Maritime Hospital,Trust,D,not included,not included,not included,not included,not included,not included,97.82608695652173
+2022-23,N6,South East,RHW,Royal Berkshire NHS Foundation Trust,Royal Berkshire Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.48812095032397
+2022-23,N6,South East,RA2,Royal Surrey County Hospital NHS Foundation Trust,Royal Surrey County Hospital,Trust,D,not included,not included,not included,not included,not included,not included,93.75
+2022-23,N6,South East,RTP,Surrey and Sussex Healthcare NHS Trust,Crawley Hospital,Trust,D,not included,not included,not included,not included,not included,not included,95.91002044989774
+2022-23,N6,South East,RYR,University Hospitals Sussex NHS Foundation Trust,Princess Royal Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.12790697674419
+2022-23,N6,South East,RYR,University Hospitals Sussex NHS Foundation Trust,Royal Sussex County Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.43502824858757
+2022-23,N6,South East,RYR,University Hospitals Sussex NHS Foundation Trust,St Richard's Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.15611814345992
+2022-23,N6,South East,RYR,University Hospitals Sussex NHS Foundation Trust,Worthing Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.60629921259843
+2022-23,N7,South West,RBD,Dorset County Hospital NHS Foundation Trust,Blandford Community Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N7,South West,RBD,Dorset County Hospital NHS Foundation Trust,Dorset County Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.85057471264368
+2022-23,N7,South West,RTE,Gloucestershire Hospitals NHS Foundation Trust,Gloucestershire Royal Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.39357429718876
+2022-23,N7,South West,RN3,Great Western Hospitals NHS Foundation Trust,Great Western Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N7,South West,RN5,Hampshire Hospitals NHS Foundation Trust,Basingstoke and North Hampshire Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.9010989010989
+2022-23,N7,South West,RN5,Hampshire Hospitals NHS Foundation Trust,Royal Hampshire County Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.19028340080972
+2022-23,N7,South West,R1F,Isle of Wight NHS Trust,St Mary's Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.14529914529915
+2022-23,N7,South West,RVJ,North Bristol NHS Trust,Southmead Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N7,South West,RBZ,Northern Devon Healthcare NHS Trust,North Devon District Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.4186046511628
+2022-23,N7,South West,RTH,Oxford University Hospitals NHS Foundation Trust,Horton General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.39024390243902
+2022-23,N7,South West,RTH,Oxford University Hospitals NHS Foundation Trust,Oxford Radcliffe Hospital,Trust,D,not included,not included,not included,not included,not included,not included,96.26334519572953
+2022-23,N7,South West,RHU,Portsmouth Hospitals NHS Trust,Queen Alexandra Hospital,Trust,D,not included,not included,not included,not included,not included,not included,97.81420765027322
+2022-23,N7,South West,REF,Royal Cornwall Hospitals NHS Trust,Royal Cornwall Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.16317991631799
+2022-23,N7,South West,RH8,Royal Devon and Exeter NHS Foundation Trust,Royal Devon and Exeter Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N7,South West,RD1,Royal United Hospitals Bath NHS Foundation Trust,Royal United Hospital,Trust,D,not included,not included,not included,not included,not included,not included,94.72573839662446
+2022-23,N7,South West,RNZ,Salisbury NHS Foundation Trust,Salisbury District Hospital,Trust,D,not included,not included,not included,not included,not included,not included,97.48427672955975
+2022-23,N7,South West,RH5,Somerset NHS Foundation Trust,Musgrove Park Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N7,South West,RA9,Torbay and South Devon NHS Foundation Trust,Torbay Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.7878787878788
+2022-23,N7,South West,RHM,University Hospital Southampton NHS Foundation Trust,Southampton General Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.16700610997964
+2022-23,N7,South West,RA7,University Hospitals Bristol NHS Foundation Trust,St Michael's Hospital,Trust,D,not included,not included,not included,not included,not included,not included,99.28698752228165
+2022-23,N7,South West,R0D,University Hospitals Dorset NHS Foundation Trust,Harbourside Gynaecology Centre,Trust,D,not included,not included,not included,not included,not included,not included,91.66666666666666
+2022-23,N7,South West,R0D,University Hospitals Dorset NHS Foundation Trust,Royal Bournemouth Hospital,Trust,D,not included,not included,not included,not included,not included,not included,98.07692307692307
+2022-23,N7,South West,RK9,University Hospitals Plymouth NHS Trust,Derriford Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0
+2022-23,N7,South West,RA4,Yeovil District Hospital NHS Foundation Trust,Yeovil District Hospital,Trust,D,not included,not included,not included,not included,not included,not included,100.0

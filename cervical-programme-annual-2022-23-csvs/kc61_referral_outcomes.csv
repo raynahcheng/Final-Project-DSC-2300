@@ -1,0 +1,33 @@
+CollectionYearRange,Parent_Org_Code,Parent_Org_Name,Org_Code,Org_Name,Org_Type,Referral_type,Part,All_samples,Cervical_cancer,CIN3_and_adeno_in_situ,CIN2,CIN1,HPV_only,No_CIN_No_HPV,Non_cerv_cancer_detected,Seen_Colp_result_unknown,Inadequate_biopsy,Seen_Colp_NAD_no_biop
+2021-22,E92000001,England,E92000001,England,National,category_1_8_3_result,C2,124839.0,89.0,4077.0,8755.0,29926.0,16776.0,7487.0,3.0,305.0,1394.0,51353.0
+2021-22,E92000001,England,E92000001,England,National,category_7_4_5_6_result,C2,37154.0,1078.0,17880.0,9996.0,4637.0,1389.0,904.0,4.0,62.0,88.0,532.0
+2022-23,E92000001,England,E92000001,England,National,category_1_8_3_result,C1,30756.0,22.0,959.0,1998.0,6653.0,3880.0,1724.0,2.0,126.0,340.0,13619.0
+2022-23,E92000001,England,E92000001,England,National,category_7_4_5_6_result,C1,8053.0,231.0,3788.0,2152.0,995.0,344.0,208.0,0.0,17.0,19.0,148.0
+2021-22,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,category_1_8_3_result,C2,15289.0,6.0,403.0,1000.0,3373.0,1436.0,1324.0,1.0,0.0,162.0,7110.0
+2021-22,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,category_7_4_5_6_result,C2,5701.0,146.0,2580.0,1551.0,760.0,205.0,243.0,1.0,0.0,15.0,104.0
+2021-22,N2,North West,N2,North West,Region,category_1_8_3_result,C2,14497.0,11.0,394.0,994.0,2646.0,1492.0,379.0,1.0,49.0,207.0,7805.0
+2021-22,N2,North West,N2,North West,Region,category_7_4_5_6_result,C2,4617.0,164.0,2465.0,1281.0,364.0,124.0,52.0,1.0,28.0,16.0,43.0
+2021-22,N3,Midlands,N3,Midlands,Region,category_1_8_3_result,C2,19169.0,21.0,1023.0,1287.0,3189.0,2361.0,1123.0,0.0,61.0,236.0,8909.0
+2021-22,N3,Midlands,N3,Midlands,Region,category_7_4_5_6_result,C2,5523.0,247.0,3344.0,1076.0,383.0,164.0,115.0,0.0,13.0,15.0,74.0
+2021-22,N4,East of England,N4,East of England,Region,category_1_8_3_result,C2,10504.0,17.0,487.0,597.0,1520.0,961.0,382.0,0.0,41.0,29.0,6078.0
+2021-22,N4,East of England,N4,East of England,Region,category_7_4_5_6_result,C2,3575.0,114.0,2004.0,776.0,318.0,135.0,94.0,1.0,11.0,6.0,63.0
+2021-22,N5,London,N5,London,Region,category_1_8_3_result,C2,34048.0,10.0,717.0,2472.0,9742.0,5480.0,2037.0,1.0,12.0,297.0,11496.0
+2021-22,N5,London,N5,London,Region,category_7_4_5_6_result,C2,9465.0,161.0,3330.0,2929.0,1917.0,488.0,211.0,1.0,6.0,21.0,200.0
+2021-22,N6,South East,N6,South East,Region,category_1_8_3_result,C2,23885.0,11.0,551.0,1629.0,7203.0,3541.0,1718.0,0.0,3.0,393.0,8295.0
+2021-22,N6,South East,N6,South East,Region,category_7_4_5_6_result,C2,6302.0,167.0,3024.0,1829.0,774.0,218.0,171.0,0.0,2.0,15.0,40.0
+2021-22,N7,South West,N7,South West,Region,category_1_8_3_result,C2,7447.0,13.0,502.0,776.0,2253.0,1505.0,524.0,0.0,139.0,70.0,1660.0
+2021-22,N7,South West,N7,South West,Region,category_7_4_5_6_result,C2,1971.0,79.0,1133.0,554.0,121.0,55.0,18.0,0.0,2.0,0.0,8.0
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,category_1_8_3_result,C1,3623.0,3.0,96.0,226.0,774.0,295.0,294.0,0.0,0.0,44.0,1745.0
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,category_7_4_5_6_result,C1,1203.0,28.0,492.0,364.0,168.0,39.0,42.0,0.0,0.0,5.0,38.0
+2022-23,N2,North West,N2,North West,Region,category_1_8_3_result,C1,3629.0,0.0,82.0,207.0,619.0,383.0,100.0,0.0,18.0,50.0,1955.0
+2022-23,N2,North West,N2,North West,Region,category_7_4_5_6_result,C1,913.0,33.0,450.0,252.0,91.0,29.0,10.0,0.0,12.0,2.0,18.0
+2022-23,N3,Midlands,N3,Midlands,Region,category_1_8_3_result,C1,4945.0,9.0,285.0,329.0,753.0,556.0,285.0,1.0,30.0,46.0,2366.0
+2022-23,N3,Midlands,N3,Midlands,Region,category_7_4_5_6_result,C1,1305.0,52.0,770.0,235.0,93.0,61.0,41.0,0.0,2.0,3.0,20.0
+2022-23,N4,East of England,N4,East of England,Region,category_1_8_3_result,C1,2716.0,2.0,96.0,155.0,347.0,224.0,116.0,0.0,9.0,8.0,1628.0
+2022-23,N4,East of England,N4,East of England,Region,category_7_4_5_6_result,C1,833.0,27.0,455.0,177.0,86.0,24.0,23.0,0.0,2.0,0.0,14.0
+2022-23,N5,London,N5,London,Region,category_1_8_3_result,C1,8220.0,7.0,139.0,507.0,2007.0,1242.0,416.0,1.0,10.0,88.0,3287.0
+2022-23,N5,London,N5,London,Region,category_7_4_5_6_result,C1,1765.0,35.0,553.0,571.0,350.0,121.0,45.0,0.0,0.0,8.0,45.0
+2022-23,N6,South East,N6,South East,Region,category_1_8_3_result,C1,5841.0,1.0,178.0,381.0,1585.0,817.0,394.0,0.0,4.0,84.0,2258.0
+2022-23,N6,South East,N6,South East,Region,category_7_4_5_6_result,C1,1589.0,39.0,790.0,441.0,186.0,63.0,42.0,0.0,1.0,1.0,8.0
+2022-23,N7,South West,N7,South West,Region,category_1_8_3_result,C1,1782.0,0.0,83.0,193.0,568.0,363.0,119.0,0.0,55.0,20.0,380.0
+2022-23,N7,South West,N7,South West,Region,category_7_4_5_6_result,C1,445.0,17.0,278.0,112.0,21.0,7.0,5.0,0.0,0.0,0.0,5.0

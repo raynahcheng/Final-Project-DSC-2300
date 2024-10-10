@@ -1,0 +1,331 @@
+CollectionYearRange,Parent_Org_Code,Parent_Org_Name,Org_Code,Org_Name,Org_Type,Indicator,Part,Inadequate,Negative,Borderline_changes,Mild_dyskaryosis,Moderate_dyskaryosis,Severe_dyskaryosis,Severe_dyskaryosis_Inv,Glandular_neoplasia,Highgrade_dyskaryosis_severe_worse
+2012-13,E92000001,England,E92000001,England,National,<20,B,46.0,740.0,103.0,67.0,25.0,4.0,0.0,1.0,not included
+2012-13,E92000001,England,E92000001,England,National,20-24,B,1326.0,50044.0,4291.0,2779.0,905.0,1155.0,21.0,36.0,not included
+2012-13,E92000001,England,E92000001,England,National,25-29,B,11785.0,500725.0,33023.0,18724.0,6389.0,8492.0,167.0,305.0,not included
+2012-13,E92000001,England,E92000001,England,National,30-34,B,10952.0,469155.0,19464.0,9657.0,2893.0,3946.0,104.0,243.0,not included
+2012-13,E92000001,England,E92000001,England,National,35-39,B,10288.0,438289.0,14721.0,6102.0,1666.0,2208.0,83.0,170.0,not included
+2012-13,E92000001,England,E92000001,England,National,40-44,B,10742.0,471065.0,14924.0,5385.0,1302.0,1462.0,79.0,180.0,not included
+2012-13,E92000001,England,E92000001,England,National,45-49,B,9633.0,443594.0,13185.0,4368.0,927.0,934.0,56.0,140.0,not included
+2012-13,E92000001,England,E92000001,England,National,50-54,B,6617.0,272092.0,7483.0,2509.0,497.0,430.0,31.0,105.0,not included
+2012-13,E92000001,England,E92000001,England,National,55-59,B,7507.0,241225.0,4136.0,1269.0,304.0,371.0,34.0,107.0,not included
+2012-13,E92000001,England,E92000001,England,National,60-64,B,5473.0,174132.0,2511.0,761.0,168.0,229.0,26.0,91.0,not included
+2012-13,E92000001,England,E92000001,England,National,65-69,B,641.0,17410.0,514.0,165.0,45.0,41.0,10.0,19.0,not included
+2012-13,E92000001,England,E92000001,England,National,70-74,B,80.0,2277.0,87.0,41.0,11.0,10.0,2.0,7.0,not included
+2012-13,E92000001,England,E92000001,England,National,>=75,B,33.0,642.0,34.0,7.0,5.0,4.0,2.0,4.0,not included
+2013-14,E92000001,England,E92000001,England,National,<20,B,24.0,482.0,59.0,67.0,11.0,5.0,5.0,2.0,not included
+2013-14,E92000001,England,E92000001,England,National,20-24,B,1939.0,80208.0,4895.0,5584.0,1589.0,2262.0,41.0,70.0,not included
+2013-14,E92000001,England,E92000001,England,National,25-29,B,11548.0,469930.0,22011.0,23537.0,6287.0,8851.0,198.0,352.0,not included
+2013-14,E92000001,England,E92000001,England,National,30-34,B,10756.0,442001.0,13890.0,12300.0,2803.0,3887.0,120.0,241.0,not included
+2013-14,E92000001,England,E92000001,England,National,35-39,B,9896.0,405453.0,10520.0,7939.0,1724.0,2118.0,106.0,164.0,not included
+2013-14,E92000001,England,E92000001,England,National,40-44,B,10382.0,441138.0,10747.0,7173.0,1262.0,1422.0,96.0,143.0,not included
+2013-14,E92000001,England,E92000001,England,National,45-49,B,9618.0,436949.0,9921.0,6288.0,884.0,940.0,71.0,98.0,not included
+2013-14,E92000001,England,E92000001,England,National,50-54,B,7356.0,280239.0,5961.0,3666.0,525.0,521.0,50.0,69.0,not included
+2013-14,E92000001,England,E92000001,England,National,55-59,B,8690.0,240751.0,3600.0,1985.0,345.0,389.0,44.0,53.0,not included
+2013-14,E92000001,England,E92000001,England,National,60-64,B,4777.0,119917.0,1543.0,927.0,159.0,198.0,26.0,31.0,not included
+2013-14,E92000001,England,E92000001,England,National,65-69,B,511.0,10812.0,308.0,208.0,28.0,39.0,10.0,2.0,not included
+2013-14,E92000001,England,E92000001,England,National,70-74,B,76.0,1557.0,44.0,42.0,3.0,4.0,2.0,2.0,not included
+2013-14,E92000001,England,E92000001,England,National,>=75,B,29.0,425.0,22.0,11.0,4.0,1.0,2.0,1.0,not included
+2014-15,E92000001,England,E92000001,England,National,<20,B,13.0,367.0,36.0,53.0,1.0,3.0,0.0,0.0,not included
+2014-15,E92000001,England,E92000001,England,National,20-24,B,2231.0,97265.0,5330.0,6859.0,1939.0,2688.0,50.0,92.0,not included
+2014-15,E92000001,England,E92000001,England,National,25-29,B,10093.0,412694.0,17848.0,21330.0,5735.0,8339.0,164.0,331.0,not included
+2014-15,E92000001,England,E92000001,England,National,30-34,B,10266.0,408783.0,12163.0,11484.0,2658.0,4137.0,108.0,301.0,not included
+2014-15,E92000001,England,E92000001,England,National,35-39,B,9554.0,389501.0,9179.0,7725.0,1577.0,2203.0,97.0,193.0,not included
+2014-15,E92000001,England,E92000001,England,National,40-44,B,9970.0,417145.0,9262.0,6774.0,1131.0,1501.0,80.0,154.0,not included
+2014-15,E92000001,England,E92000001,England,National,45-49,B,9895.0,428453.0,9031.0,6144.0,895.0,1008.0,53.0,111.0,not included
+2014-15,E92000001,England,E92000001,England,National,50-54,B,7779.0,279912.0,5425.0,3624.0,522.0,517.0,35.0,72.0,not included
+2014-15,E92000001,England,E92000001,England,National,55-59,B,8289.0,204659.0,2959.0,1771.0,302.0,397.0,37.0,28.0,not included
+2014-15,E92000001,England,E92000001,England,National,60-64,B,5912.0,134815.0,1608.0,844.0,180.0,175.0,35.0,17.0,not included
+2014-15,E92000001,England,E92000001,England,National,65-69,B,405.0,8607.0,210.0,167.0,24.0,23.0,7.0,2.0,not included
+2014-15,E92000001,England,E92000001,England,National,70-74,B,51.0,1015.0,30.0,24.0,7.0,2.0,4.0,2.0,not included
+2014-15,E92000001,England,E92000001,England,National,>=75,B,23.0,309.0,16.0,9.0,1.0,1.0,1.0,0.0,not included
+2015-16,E92000001,England,E92000001,England,National,<20,B,8.0,153.0,15.0,17.0,2.0,0.0,0.0,0.0,not included
+2015-16,E92000001,England,E92000001,England,National,20-24,B,2398.0,101500.0,5021.0,6331.0,1568.0,2072.0,44.0,66.0,not included
+2015-16,E92000001,England,E92000001,England,National,25-29,B,10398.0,415790.0,18003.0,21616.0,5543.0,7584.0,157.0,321.0,not included
+2015-16,E92000001,England,E92000001,England,National,30-34,B,10702.0,420271.0,12233.0,11343.0,2924.0,4100.0,109.0,289.0,not included
+2015-16,E92000001,England,E92000001,England,National,35-39,B,10293.0,400290.0,9365.0,7686.0,1655.0,2282.0,86.0,188.0,not included
+2015-16,E92000001,England,E92000001,England,National,40-44,B,9965.0,402619.0,8786.0,6542.0,1144.0,1435.0,78.0,136.0,not included
+2015-16,E92000001,England,E92000001,England,National,45-49,B,9910.0,410139.0,8596.0,5858.0,804.0,944.0,62.0,116.0,not included
+2015-16,E92000001,England,E92000001,England,National,50-54,B,7623.0,274414.0,5425.0,3598.0,488.0,487.0,39.0,54.0,not included
+2015-16,E92000001,England,E92000001,England,National,55-59,B,8238.0,211734.0,3131.0,1813.0,280.0,347.0,34.0,31.0,not included
+2015-16,E92000001,England,E92000001,England,National,60-64,B,7210.0,179363.0,1880.0,915.0,181.0,209.0,33.0,28.0,not included
+2015-16,E92000001,England,E92000001,England,National,65-69,B,425.0,8874.0,143.0,151.0,31.0,25.0,4.0,1.0,not included
+2015-16,E92000001,England,E92000001,England,National,70-74,B,37.0,681.0,19.0,29.0,2.0,9.0,0.0,0.0,not included
+2015-16,E92000001,England,E92000001,England,National,>=75,B,18.0,226.0,15.0,5.0,2.0,4.0,0.0,0.0,not included
+2016-17,E92000001,England,E92000001,England,National,<20,B,4.0,117.0,7.0,11.0,3.0,0.0,0.0,0.0,not included
+2016-17,E92000001,England,E92000001,England,National,20-24,B,2322.0,93991.0,4012.0,5332.0,1202.0,1674.0,35.0,42.0,not included
+2016-17,E92000001,England,E92000001,England,National,25-29,B,11233.0,429146.0,16860.0,20735.0,4829.0,6714.0,140.0,292.0,not included
+2016-17,E92000001,England,E92000001,England,National,30-34,B,11613.0,436819.0,11721.0,11482.0,2778.0,3936.0,112.0,263.0,not included
+2016-17,E92000001,England,E92000001,England,National,35-39,B,11205.0,420261.0,9255.0,7892.0,1575.0,2113.0,97.0,222.0,not included
+2016-17,E92000001,England,E92000001,England,National,40-44,B,10536.0,402280.0,8266.0,6443.0,1130.0,1349.0,81.0,134.0,not included
+2016-17,E92000001,England,E92000001,England,National,45-49,B,11049.0,423269.0,8434.0,5974.0,809.0,904.0,70.0,121.0,not included
+2016-17,E92000001,England,E92000001,England,National,50-54,B,8285.0,277225.0,5111.0,3725.0,523.0,495.0,41.0,52.0,not included
+2016-17,E92000001,England,E92000001,England,National,55-59,B,9695.0,231928.0,3147.0,1971.0,318.0,348.0,35.0,32.0,not included
+2016-17,E92000001,England,E92000001,England,National,60-64,B,7780.0,184190.0,1792.0,992.0,200.0,224.0,30.0,28.0,not included
+2016-17,E92000001,England,E92000001,England,National,65-69,B,465.0,8178.0,142.0,162.0,35.0,15.0,3.0,0.0,not included
+2016-17,E92000001,England,E92000001,England,National,70-74,B,34.0,801.0,22.0,31.0,2.0,2.0,1.0,0.0,not included
+2016-17,E92000001,England,E92000001,England,National,>=75,B,11.0,180.0,8.0,5.0,1.0,2.0,2.0,0.0,not included
+2017-18,E92000001,England,E92000001,England,National,<20,B,1.0,97.0,3.0,7.0,0.0,1.0,0.0,0.0,not included
+2017-18,E92000001,England,E92000001,England,National,20-24,B,2096.0,90515.0,3650.0,5019.0,968.0,1242.0,25.0,48.0,not included
+2017-18,E92000001,England,E92000001,England,National,25-29,B,10646.0,437964.0,16594.0,20380.0,4807.0,6343.0,135.0,260.0,not included
+2017-18,E92000001,England,E92000001,England,National,30-34,B,11198.0,441014.0,11688.0,11436.0,2852.0,4058.0,121.0,268.0,not included
+2017-18,E92000001,England,E92000001,England,National,35-39,B,11243.0,433341.0,9342.0,7845.0,1637.0,2267.0,89.0,223.0,not included
+2017-18,E92000001,England,E92000001,England,National,40-44,B,9973.0,396132.0,7971.0,5996.0,1079.0,1314.0,83.0,116.0,not included
+2017-18,E92000001,England,E92000001,England,National,45-49,B,10681.0,425670.0,8137.0,5710.0,831.0,945.0,72.0,83.0,not included
+2017-18,E92000001,England,E92000001,England,National,50-54,B,8087.0,281487.0,5091.0,3695.0,460.0,504.0,38.0,66.0,not included
+2017-18,E92000001,England,E92000001,England,National,55-59,B,8930.0,223615.0,2974.0,2005.0,343.0,383.0,34.0,34.0,not included
+2017-18,E92000001,England,E92000001,England,National,60-64,B,7496.0,190666.0,1836.0,1097.0,190.0,241.0,35.0,22.0,not included
+2017-18,E92000001,England,E92000001,England,National,65-69,B,415.0,7487.0,153.0,156.0,25.0,25.0,3.0,4.0,not included
+2017-18,E92000001,England,E92000001,England,National,70-74,B,29.0,571.0,17.0,15.0,1.0,3.0,0.0,0.0,not included
+2017-18,E92000001,England,E92000001,England,National,>=75,B,10.0,139.0,5.0,6.0,2.0,0.0,1.0,0.0,not included
+2018-19,E92000001,England,E92000001,England,National,<20,B,2.0,79.0,7.0,7.0,1.0,2.0,0.0,0.0,not included
+2018-19,E92000001,England,E92000001,England,National,20-24,B,2091.0,104295.0,3916.0,5510.0,898.0,972.0,15.0,15.0,not included
+2018-19,E92000001,England,E92000001,England,National,25-29,B,9923.0,465011.0,16676.0,21450.0,4691.0,5976.0,138.0,211.0,not included
+2018-19,E92000001,England,E92000001,England,National,30-34,B,10820.0,482269.0,12803.0,12988.0,3247.0,4517.0,118.0,289.0,not included
+2018-19,E92000001,England,E92000001,England,National,35-39,B,11073.0,473059.0,9902.0,8759.0,2024.0,2608.0,105.0,254.0,not included
+2018-19,E92000001,England,E92000001,England,National,40-44,B,9539.0,421874.0,8266.0,6617.0,1156.0,1514.0,72.0,143.0,not included
+2018-19,E92000001,England,E92000001,England,National,45-49,B,9995.0,445854.0,8239.0,6201.0,885.0,1076.0,65.0,105.0,not included
+2018-19,E92000001,England,E92000001,England,National,50-54,B,7743.0,306781.0,5237.0,4152.0,583.0,576.0,48.0,65.0,not included
+2018-19,E92000001,England,E92000001,England,National,55-59,B,8716.0,255390.0,3467.0,2393.0,416.0,451.0,43.0,40.0,not included
+2018-19,E92000001,England,E92000001,England,National,60-64,B,7318.0,211585.0,2065.0,1262.0,234.0,287.0,32.0,22.0,not included
+2018-19,E92000001,England,E92000001,England,National,65-69,B,361.0,7228.0,175.0,172.0,25.0,32.0,3.0,2.0,not included
+2018-19,E92000001,England,E92000001,England,National,70-74,B,28.0,581.0,19.0,23.0,5.0,3.0,2.0,0.0,not included
+2018-19,E92000001,England,E92000001,England,National,>=75,B,12.0,152.0,9.0,9.0,2.0,1.0,0.0,0.0,not included
+2019-20,E92000001,England,E92000001,England,National,<20,B,0.0,71.0,1.0,3.0,1.0,0.0,0.0,0.0,not included
+2019-20,E92000001,England,E92000001,England,National,20-24,B,1268.0,99111.0,2604.0,4913.0,741.0,669.0,7.0,11.0,not included
+2019-20,E92000001,England,E92000001,England,National,25-29,B,5591.0,420767.0,11444.0,18632.0,4125.0,4060.0,66.0,153.0,not included
+2019-20,E92000001,England,E92000001,England,National,30-34,B,5735.0,468797.0,9187.0,12459.0,3583.0,4210.0,93.0,323.0,not included
+2019-20,E92000001,England,E92000001,England,National,35-39,B,5406.0,447224.0,6522.0,7900.0,2081.0,2358.0,89.0,201.0,not included
+2019-20,E92000001,England,E92000001,England,National,40-44,B,4516.0,396804.0,5154.0,5804.0,1226.0,1327.0,58.0,119.0,not included
+2019-20,E92000001,England,E92000001,England,National,45-49,B,4629.0,408205.0,4982.0,5303.0,913.0,934.0,40.0,107.0,not included
+2019-20,E92000001,England,E92000001,England,National,50-54,B,3671.0,285021.0,3253.0,3399.0,558.0,538.0,35.0,48.0,not included
+2019-20,E92000001,England,E92000001,England,National,55-59,B,4665.0,249662.0,2240.0,2183.0,408.0,477.0,35.0,36.0,not included
+2019-20,E92000001,England,E92000001,England,National,60-64,B,3445.0,180281.0,1243.0,1131.0,263.0,254.0,26.0,26.0,not included
+2019-20,E92000001,England,E92000001,England,National,65-69,B,194.0,6887.0,122.0,181.0,38.0,28.0,5.0,1.0,not included
+2019-20,E92000001,England,E92000001,England,National,70-74,B,10.0,575.0,21.0,28.0,2.0,3.0,1.0,0.0,not included
+2019-20,E92000001,England,E92000001,England,National,>=75,B,7.0,159.0,4.0,5.0,0.0,2.0,1.0,0.0,not included
+2020-21,E92000001,England,E92000001,England,National,<20,B,0.0,39.0,1.0,1.0,0.0,1.0,0.0,0.0,not included
+2020-21,E92000001,England,E92000001,England,National,20-24,B,466.0,68402.0,1306.0,3747.0,473.0,296.0,2.0,4.0,not included
+2020-21,E92000001,England,E92000001,England,National,25-29,B,2793.0,435963.0,9696.0,21411.0,4254.0,3551.0,49.0,115.0,not included
+2020-21,E92000001,England,E92000001,England,National,30-34,B,2319.0,451770.0,7807.0,14014.0,4374.0,4360.0,102.0,334.0,not included
+2020-21,E92000001,England,E92000001,England,National,35-39,B,1683.0,427666.0,5153.0,8687.0,2416.0,2539.0,97.0,261.0,not included
+2020-21,E92000001,England,E92000001,England,National,40-44,B,1421.0,393016.0,3538.0,6249.0,1452.0,1502.0,64.0,140.0,not included
+2020-21,E92000001,England,E92000001,England,National,45-49,B,1241.0,384060.0,2899.0,5145.0,1043.0,884.0,55.0,88.0,not included
+2020-21,E92000001,England,E92000001,England,National,50-54,B,909.0,275640.0,2076.0,3537.0,618.0,600.0,35.0,46.0,not included
+2020-21,E92000001,England,E92000001,England,National,55-59,B,797.0,232579.0,1710.0,2213.0,505.0,468.0,33.0,22.0,not included
+2020-21,E92000001,England,E92000001,England,National,60-64,B,594.0,175761.0,1128.0,1271.0,295.0,296.0,27.0,25.0,not included
+2020-21,E92000001,England,E92000001,England,National,65-69,B,50.0,7268.0,127.0,183.0,44.0,31.0,2.0,1.0,not included
+2020-21,E92000001,England,E92000001,England,National,70-74,B,3.0,392.0,11.0,26.0,4.0,3.0,1.0,0.0,not included
+2020-21,E92000001,England,E92000001,England,National,>=75,B,2.0,81.0,4.0,3.0,0.0,0.0,0.0,0.0,not included
+2021-22,E92000001,England,E92000001,England,National,<20,B,0.0,7.0,1.0,0.0,0.0,0.0,0.0,0.0,not included
+2021-22,E92000001,England,E92000001,England,National,20-24,B,688.0,95269.0,1797.0,5502.0,723.0,358.0,3.0,0.0,not included
+2021-22,E92000001,England,E92000001,England,National,25-29,B,3551.0,455521.0,9814.0,24010.0,4780.0,3108.0,45.0,103.0,not included
+2021-22,E92000001,England,E92000001,England,National,30-34,B,3409.0,519753.0,8714.0,17518.0,5074.0,4634.0,97.0,350.0,not included
+2021-22,E92000001,England,E92000001,England,National,35-39,B,2707.0,499149.0,5901.0,11316.0,3125.0,2993.0,94.0,295.0,not included
+2021-22,E92000001,England,E92000001,England,National,40-44,B,2389.0,467183.0,4246.0,8181.0,1994.0,1759.0,86.0,178.0,not included
+2021-22,E92000001,England,E92000001,England,National,45-49,B,2272.0,440178.0,3315.0,6589.0,1294.0,1096.0,56.0,117.0,not included
+2021-22,E92000001,England,E92000001,England,National,50-54,B,1619.0,320456.0,2564.0,4574.0,913.0,751.0,44.0,57.0,not included
+2021-22,E92000001,England,E92000001,England,National,55-59,B,1326.0,276812.0,2064.0,3042.0,752.0,581.0,44.0,36.0,not included
+2021-22,E92000001,England,E92000001,England,National,60-64,B,1022.0,220543.0,1435.0,1899.0,480.0,412.0,33.0,20.0,not included
+2021-22,E92000001,England,E92000001,England,National,65-69,B,90.0,8244.0,223.0,265.0,64.0,53.0,5.0,4.0,not included
+2021-22,E92000001,England,E92000001,England,National,70-74,B,11.0,464.0,22.0,28.0,6.0,10.0,2.0,0.0,not included
+2021-22,E92000001,England,E92000001,England,National,>=75,B,2.0,100.0,1.0,9.0,0.0,1.0,1.0,0.0,not included
+2022-23,E92000001,England,E92000001,England,National,<20,B,0.0,6.0,0.0,1.0,0.0,0.0,0.0,0.0,not included
+2022-23,E92000001,England,E92000001,England,National,20-24,B,569.0,84411.0,1764.0,4659.0,583.0,257.0,3.0,6.0,not included
+2022-23,E92000001,England,E92000001,England,National,25-29,B,3243.0,443367.0,10159.0,23320.0,4100.0,2149.0,33.0,61.0,not included
+2022-23,E92000001,England,E92000001,England,National,30-34,B,3084.0,508815.0,8890.0,16734.0,4433.0,3168.0,92.0,231.0,not included
+2022-23,E92000001,England,E92000001,England,National,35-39,B,2630.0,497172.0,6795.0,11594.0,3117.0,2452.0,89.0,269.0,not included
+2022-23,E92000001,England,E92000001,England,National,40-44,B,2452.0,467257.0,5173.0,8788.0,2148.0,1480.0,73.0,184.0,not included
+2022-23,E92000001,England,E92000001,England,National,45-49,B,2011.0,417126.0,4136.0,6667.0,1371.0,987.0,60.0,107.0,not included
+2022-23,E92000001,England,E92000001,England,National,50-54,B,1579.0,307295.0,3239.0,5003.0,997.0,636.0,32.0,75.0,not included
+2022-23,E92000001,England,E92000001,England,National,55-59,B,1498.0,277907.0,2917.0,3736.0,930.0,609.0,40.0,40.0,not included
+2022-23,E92000001,England,E92000001,England,National,60-64,B,1183.0,216261.0,2248.0,2426.0,730.0,431.0,33.0,31.0,not included
+2022-23,E92000001,England,E92000001,England,National,65-69,B,139.0,9106.0,317.0,311.0,91.0,49.0,5.0,2.0,not included
+2022-23,E92000001,England,E92000001,England,National,70-74,B,7.0,583.0,22.0,35.0,6.0,6.0,1.0,1.0,not included
+2022-23,E92000001,England,E92000001,England,National,>=75,B,1.0,120.0,4.0,7.0,2.0,3.0,0.0,0.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,<20,B,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,20-24,B,15.0,3641.0,92.0,178.0,36.0,10.0,0.0,0.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,25-29,B,378.0,68729.0,1631.0,2780.0,726.0,250.0,9.0,7.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,30-34,B,287.0,70645.0,1463.0,1857.0,789.0,405.0,16.0,49.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,35-39,B,249.0,72304.0,1156.0,1391.0,642.0,329.0,20.0,53.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,40-44,B,183.0,65804.0,810.0,1037.0,424.0,187.0,16.0,33.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,45-49,B,133.0,57590.0,612.0,810.0,220.0,133.0,11.0,24.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,50-54,B,175.0,49649.0,580.0,706.0,185.0,72.0,3.0,19.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,55-59,B,208.0,40638.0,456.0,464.0,131.0,47.0,6.0,4.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,60-64,B,219.0,34017.0,371.0,304.0,109.0,48.0,7.0,6.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,65-69,B,43.0,2644.0,67.0,59.0,16.0,8.0,3.0,1.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,70-74,B,1.0,133.0,6.0,7.0,1.0,0.0,0.0,1.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,>=75,B,0.0,21.0,1.0,2.0,1.0,0.0,0.0,0.0,not included
+2022-23,N2,North West,N2,North West,Region,<20,B,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,not included
+2022-23,N2,North West,N2,North West,Region,20-24,B,72.0,12053.0,213.0,545.0,58.0,30.0,0.0,0.0,not included
+2022-23,N2,North West,N2,North West,Region,25-29,B,392.0,57758.0,1154.0,2559.0,364.0,294.0,1.0,6.0,not included
+2022-23,N2,North West,N2,North West,Region,30-34,B,295.0,66674.0,907.0,1787.0,411.0,442.0,6.0,21.0,not included
+2022-23,N2,North West,N2,North West,Region,35-39,B,240.0,63662.0,693.0,1251.0,243.0,318.0,5.0,34.0,not included
+2022-23,N2,North West,N2,North West,Region,40-44,B,230.0,57857.0,535.0,953.0,186.0,193.0,4.0,20.0,not included
+2022-23,N2,North West,N2,North West,Region,45-49,B,138.0,50929.0,369.0,667.0,113.0,113.0,3.0,12.0,not included
+2022-23,N2,North West,N2,North West,Region,50-54,B,137.0,38743.0,326.0,520.0,59.0,74.0,3.0,13.0,not included
+2022-23,N2,North West,N2,North West,Region,55-59,B,184.0,35327.0,254.0,367.0,69.0,65.0,2.0,4.0,not included
+2022-23,N2,North West,N2,North West,Region,60-64,B,133.0,28175.0,164.0,228.0,47.0,49.0,3.0,1.0,not included
+2022-23,N2,North West,N2,North West,Region,65-69,B,24.0,1087.0,39.0,51.0,4.0,3.0,1.0,0.0,not included
+2022-23,N2,North West,N2,North West,Region,70-74,B,1.0,75.0,3.0,3.0,0.0,1.0,0.0,0.0,not included
+2022-23,N2,North West,N2,North West,Region,>=75,B,1.0,12.0,0.0,1.0,0.0,0.0,0.0,0.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,<20,B,0.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,20-24,B,55.0,16349.0,320.0,445.0,64.0,57.0,2.0,3.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,25-29,B,217.0,77193.0,1477.0,2019.0,363.0,301.0,8.0,13.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,30-34,B,287.0,92685.0,1560.0,1875.0,512.0,428.0,22.0,31.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,35-39,B,217.0,88062.0,1407.0,1521.0,410.0,378.0,14.0,42.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,40-44,B,218.0,81966.0,1264.0,1333.0,330.0,255.0,13.0,29.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,45-49,B,176.0,74536.0,1057.0,1142.0,251.0,216.0,11.0,10.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,50-54,B,161.0,55768.0,721.0,851.0,188.0,137.0,12.0,11.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,55-59,B,154.0,51517.0,724.0,734.0,182.0,159.0,6.0,9.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,60-64,B,112.0,40137.0,519.0,549.0,118.0,98.0,3.0,12.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,65-69,B,6.0,1335.0,33.0,29.0,10.0,5.0,0.0,0.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,70-74,B,0.0,72.0,2.0,2.0,0.0,1.0,1.0,0.0,not included
+2022-23,N3,Midlands,N3,Midlands,Region,>=75,B,0.0,15.0,0.0,1.0,0.0,1.0,0.0,0.0,not included
+2022-23,N4,East of England,N4,East of England,Region,<20,B,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,not included
+2022-23,N4,East of England,N4,East of England,Region,20-24,B,42.0,12192.0,205.0,388.0,37.0,29.0,1.0,0.0,not included
+2022-23,N4,East of England,N4,East of England,Region,25-29,B,189.0,46626.0,1004.0,1566.0,283.0,227.0,1.0,6.0,not included
+2022-23,N4,East of England,N4,East of England,Region,30-34,B,170.0,58487.0,940.0,1227.0,354.0,402.0,5.0,30.0,not included
+2022-23,N4,East of England,N4,East of England,Region,35-39,B,143.0,57395.0,711.0,852.0,239.0,327.0,7.0,26.0,not included
+2022-23,N4,East of England,N4,East of England,Region,40-44,B,115.0,55443.0,545.0,702.0,196.0,174.0,7.0,10.0,not included
+2022-23,N4,East of England,N4,East of England,Region,45-49,B,133.0,49954.0,453.0,544.0,122.0,126.0,4.0,14.0,not included
+2022-23,N4,East of England,N4,East of England,Region,50-54,B,142.0,36047.0,295.0,442.0,96.0,79.0,1.0,6.0,not included
+2022-23,N4,East of England,N4,East of England,Region,55-59,B,218.0,34041.0,274.0,296.0,82.0,88.0,3.0,7.0,not included
+2022-23,N4,East of England,N4,East of England,Region,60-64,B,203.0,25019.0,180.0,184.0,56.0,56.0,4.0,2.0,not included
+2022-23,N4,East of England,N4,East of England,Region,65-69,B,30.0,1216.0,31.0,32.0,9.0,9.0,0.0,0.0,not included
+2022-23,N4,East of England,N4,East of England,Region,70-74,B,1.0,100.0,4.0,3.0,0.0,1.0,0.0,0.0,not included
+2022-23,N4,East of England,N4,East of England,Region,>=75,B,0.0,14.0,0.0,0.0,0.0,1.0,0.0,0.0,not included
+2022-23,N5,London,N5,London,Region,<20,B,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,not included
+2022-23,N5,London,N5,London,Region,20-24,B,220.0,18145.0,475.0,1723.0,205.0,64.0,0.0,3.0,not included
+2022-23,N5,London,N5,London,Region,25-29,B,1142.0,94824.0,2539.0,8760.0,1267.0,521.0,9.0,20.0,not included
+2022-23,N5,London,N5,London,Region,30-34,B,1070.0,100530.0,1955.0,5702.0,1150.0,664.0,11.0,35.0,not included
+2022-23,N5,London,N5,London,Region,35-39,B,872.0,95329.0,1244.0,3519.0,666.0,460.0,11.0,54.0,not included
+2022-23,N5,London,N5,London,Region,40-44,B,811.0,87872.0,814.0,2283.0,428.0,313.0,15.0,40.0,not included
+2022-23,N5,London,N5,London,Region,45-49,B,642.0,74189.0,651.0,1618.0,276.0,171.0,8.0,18.0,not included
+2022-23,N5,London,N5,London,Region,50-54,B,428.0,47410.0,543.0,1019.0,172.0,106.0,8.0,4.0,not included
+2022-23,N5,London,N5,London,Region,55-59,B,335.0,42467.0,419.0,776.0,176.0,104.0,5.0,4.0,not included
+2022-23,N5,London,N5,London,Region,60-64,B,241.0,32279.0,367.0,494.0,143.0,58.0,5.0,2.0,not included
+2022-23,N5,London,N5,London,Region,65-69,B,15.0,1151.0,51.0,55.0,15.0,9.0,1.0,1.0,not included
+2022-23,N5,London,N5,London,Region,70-74,B,2.0,88.0,1.0,6.0,0.0,1.0,0.0,0.0,not included
+2022-23,N5,London,N5,London,Region,>=75,B,0.0,20.0,0.0,0.0,1.0,1.0,0.0,0.0,not included
+2022-23,N6,South East,N6,South East,Region,<20,B,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,not included
+2022-23,N6,South East,N6,South East,Region,20-24,B,84.0,14044.0,344.0,1055.0,159.0,56.0,0.0,0.0,not included
+2022-23,N6,South East,N6,South East,Region,25-29,B,477.0,63770.0,1702.0,4404.0,883.0,430.0,2.0,3.0,not included
+2022-23,N6,South East,N6,South East,Region,30-34,B,524.0,79236.0,1510.0,3331.0,967.0,647.0,23.0,47.0,not included
+2022-23,N6,South East,N6,South East,Region,35-39,B,492.0,81510.0,1161.0,2469.0,717.0,478.0,22.0,46.0,not included
+2022-23,N6,South East,N6,South East,Region,40-44,B,496.0,81368.0,886.0,2025.0,478.0,277.0,9.0,43.0,not included
+2022-23,N6,South East,N6,South East,Region,45-49,B,444.0,75574.0,753.0,1517.0,323.0,175.0,18.0,18.0,not included
+2022-23,N6,South East,N6,South East,Region,50-54,B,303.0,53766.0,588.0,1158.0,250.0,126.0,3.0,17.0,not included
+2022-23,N6,South East,N6,South East,Region,55-59,B,256.0,48731.0,613.0,875.0,244.0,117.0,12.0,6.0,not included
+2022-23,N6,South East,N6,South East,Region,60-64,B,197.0,37684.0,532.0,540.0,223.0,93.0,5.0,5.0,not included
+2022-23,N6,South East,N6,South East,Region,65-69,B,14.0,1017.0,76.0,67.0,29.0,12.0,0.0,0.0,not included
+2022-23,N6,South East,N6,South East,Region,70-74,B,2.0,71.0,4.0,13.0,4.0,2.0,0.0,0.0,not included
+2022-23,N6,South East,N6,South East,Region,>=75,B,0.0,21.0,2.0,2.0,0.0,0.0,0.0,0.0,not included
+2022-23,N7,South West,N7,South West,Region,<20,B,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,not included
+2022-23,N7,South West,N7,South West,Region,20-24,B,81.0,7987.0,115.0,325.0,24.0,11.0,0.0,0.0,not included
+2022-23,N7,South West,N7,South West,Region,25-29,B,448.0,34467.0,652.0,1232.0,214.0,126.0,3.0,6.0,not included
+2022-23,N7,South West,N7,South West,Region,30-34,B,451.0,40558.0,555.0,955.0,250.0,180.0,9.0,18.0,not included
+2022-23,N7,South West,N7,South West,Region,35-39,B,417.0,38910.0,423.0,591.0,200.0,162.0,10.0,14.0,not included
+2022-23,N7,South West,N7,South West,Region,40-44,B,399.0,36947.0,319.0,455.0,106.0,81.0,9.0,9.0,not included
+2022-23,N7,South West,N7,South West,Region,45-49,B,345.0,34354.0,241.0,369.0,66.0,53.0,5.0,11.0,not included
+2022-23,N7,South West,N7,South West,Region,50-54,B,233.0,25912.0,186.0,307.0,47.0,42.0,2.0,5.0,not included
+2022-23,N7,South West,N7,South West,Region,55-59,B,143.0,25186.0,177.0,224.0,46.0,29.0,6.0,6.0,not included
+2022-23,N7,South West,N7,South West,Region,60-64,B,78.0,18950.0,115.0,127.0,34.0,29.0,6.0,3.0,not included
+2022-23,N7,South West,N7,South West,Region,65-69,B,7.0,656.0,20.0,18.0,8.0,3.0,0.0,0.0,not included
+2022-23,N7,South West,N7,South West,Region,70-74,B,0.0,44.0,2.0,1.0,1.0,0.0,0.0,0.0,not included
+2022-23,N7,South West,N7,South West,Region,>=75,B,0.0,17.0,1.0,1.0,0.0,0.0,0.0,0.0,not included
+2022-23,E92000001,England,E92000001,England,National,GP,A1,18216.0,3213038.0,45127.0,82350.0,18262.0,12058.0,443.0,995.0,not included
+2022-23,E92000001,England,E92000001,England,National,NHSCC,A1,118.0,17183.0,329.0,593.0,143.0,101.0,7.0,7.0,not included
+2022-23,E92000001,England,E92000001,England,National,GUM,A1,115.0,10277.0,209.0,560.0,106.0,93.0,5.0,3.0,not included
+2022-23,E92000001,England,E92000001,England,National,NHS_Hospital,A1,1947.0,86205.0,4493.0,9961.0,3276.0,1671.0,153.0,122.0,not included
+2022-23,E92000001,England,E92000001,England,National,Private,A1,31.0,6410.0,155.0,146.0,41.0,29.0,3.0,3.0,not included
+2022-23,E92000001,England,E92000001,England,National,Other,A1,81.0,8132.0,143.0,215.0,55.0,41.0,4.0,3.0,not included
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,GP,A1,1870.0,461556.0,7149.0,9452.0,3226.0,not included,not included,not included,1729.0
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,NHSCC,A1,21.0,4259.0,96.0,143.0,54.0,not included,not included,not included,48.0
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,GUM,A1,4.0,629.0,8.0,25.0,8.0,not included,not included,not included,6.0
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,NHS_Hospital,A1,295.0,13573.0,550.0,980.0,564.0,not included,not included,not included,307.0
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,Private,A1,23.0,5620.0,87.0,114.0,36.0,not included,not included,not included,29.0
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,Other,A1,4.0,796.0,23.0,22.0,11.0,not included,not included,not included,7.0
+2022-23,N2,North West,N2,North West,Region,GP,A1,1827.0,409996.0,4612.0,8841.0,1536.0,not included,not included,not included,1704.0
+2022-23,N2,North West,N2,North West,Region,NHSCC,A1,20.0,2356.0,45.0,92.0,18.0,not included,not included,not included,17.0
+2022-23,N2,North West,N2,North West,Region,GUM,A1,13.0,2026.0,39.0,88.0,9.0,not included,not included,not included,24.0
+2022-23,N2,North West,N2,North West,Region,NHS_Hospital,A1,369.0,13336.0,497.0,1068.0,307.0,not included,not included,not included,239.0
+2022-23,N2,North West,N2,North West,Region,Private,A1,0.0,0.0,0.0,0.0,0.0,not included,not included,not included,0.0
+2022-23,N2,North West,N2,North West,Region,Other,A1,2.0,224.0,5.0,6.0,2.0,not included,not included,not included,4.0
+2022-23,N3,Midlands,N3,Midlands,Region,GP,A1,1536.0,578327.0,8828.0,10107.0,2309.0,not included,not included,not included,2189.0
+2022-23,N3,Midlands,N3,Midlands,Region,NHSCC,A1,5.0,2107.0,48.0,56.0,16.0,not included,not included,not included,15.0
+2022-23,N3,Midlands,N3,Midlands,Region,GUM,A1,8.0,1706.0,33.0,62.0,11.0,not included,not included,not included,17.0
+2022-23,N3,Midlands,N3,Midlands,Region,NHS_Hospital,A1,158.0,13030.0,684.0,994.0,282.0,not included,not included,not included,238.0
+2022-23,N3,Midlands,N3,Midlands,Region,Private,A1,1.0,222.0,7.0,2.0,1.0,not included,not included,not included,1.0
+2022-23,N3,Midlands,N3,Midlands,Region,Other,A1,9.0,908.0,17.0,17.0,3.0,not included,not included,not included,7.0
+2022-23,N4,East of England,N4,East of England,Region,GP,A1,1385.0,376307.0,4640.0,6233.0,1471.0,not included,not included,not included,1652.0
+2022-23,N4,East of England,N4,East of England,Region,NHSCC,A1,1.0,227.0,2.0,3.0,3.0,not included,not included,not included,1.0
+2022-23,N4,East of England,N4,East of England,Region,GUM,A1,1.0,147.0,3.0,6.0,0.0,not included,not included,not included,2.0
+2022-23,N4,East of England,N4,East of England,Region,NHS_Hospital,A1,113.0,6324.0,242.0,397.0,163.0,not included,not included,not included,179.0
+2022-23,N4,East of England,N4,East of England,Region,Private,A1,0.0,10.0,0.0,0.0,0.0,not included,not included,not included,0.0
+2022-23,N4,East of England,N4,East of England,Region,Other,A1,1.0,445.0,11.0,14.0,1.0,not included,not included,not included,3.0
+2022-23,N5,London,N5,London,Region,GP,A1,5756.0,593229.0,9038.0,25901.0,4486.0,not included,not included,not included,2720.0
+2022-23,N5,London,N5,London,Region,NHSCC,A1,22.0,1075.0,21.0,54.0,13.0,not included,not included,not included,6.0
+2022-23,N5,London,N5,London,Region,GUM,A1,55.0,3350.0,66.0,232.0,44.0,not included,not included,not included,26.0
+2022-23,N5,London,N5,London,Region,NHS_Hospital,A1,583.0,21528.0,1759.0,4635.0,1310.0,not included,not included,not included,579.0
+2022-23,N5,London,N5,London,Region,Private,A1,0.0,2.0,0.0,0.0,0.0,not included,not included,not included,0.0
+2022-23,N5,London,N5,London,Region,Other,A1,0.0,9.0,0.0,1.0,0.0,not included,not included,not included,1.0
+2022-23,N6,South East,N6,South East,Region,GP,A1,3245.0,530213.0,8062.0,17231.0,4239.0,not included,not included,not included,2666.0
+2022-23,N6,South East,N6,South East,Region,NHSCC,A1,44.0,6579.0,109.0,225.0,38.0,not included,not included,not included,26.0
+2022-23,N6,South East,N6,South East,Region,GUM,A1,13.0,1327.0,38.0,100.0,24.0,not included,not included,not included,19.0
+2022-23,N6,South East,N6,South East,Region,NHS_Hospital,A1,290.0,11188.0,541.0,1474.0,522.0,not included,not included,not included,319.0
+2022-23,N6,South East,N6,South East,Region,Private,A1,2.0,321.0,61.0,25.0,4.0,not included,not included,not included,4.0
+2022-23,N6,South East,N6,South East,Region,Other,A1,18.0,2021.0,42.0,97.0,25.0,not included,not included,not included,13.0
+2022-23,N7,South West,N7,South West,Region,GP,A1,2597.0,263410.0,2798.0,4585.0,995.0,not included,not included,not included,836.0
+2022-23,N7,South West,N7,South West,Region,NHSCC,A1,5.0,580.0,8.0,20.0,1.0,not included,not included,not included,2.0
+2022-23,N7,South West,N7,South West,Region,GUM,A1,21.0,1092.0,22.0,47.0,10.0,not included,not included,not included,7.0
+2022-23,N7,South West,N7,South West,Region,NHS_Hospital,A1,139.0,7226.0,220.0,413.0,128.0,not included,not included,not included,85.0
+2022-23,N7,South West,N7,South West,Region,Private,A1,5.0,235.0,0.0,5.0,0.0,not included,not included,not included,1.0
+2022-23,N7,South West,N7,South West,Region,Other,A1,47.0,3729.0,45.0,58.0,13.0,not included,not included,not included,13.0
+2022-23,N1,North East and Yorkshire,60080,Queen Elizabeth Hospital,Lab,GP,A1,1870.0,461556.0,7149.0,9452.0,3226.0,not included,not included,not included,1729.0
+2022-23,N1,North East and Yorkshire,60080,Queen Elizabeth Hospital,Lab,NHSCC,A1,21.0,4259.0,96.0,143.0,54.0,not included,not included,not included,48.0
+2022-23,N1,North East and Yorkshire,60080,Queen Elizabeth Hospital,Lab,GUM,A1,4.0,629.0,8.0,25.0,8.0,not included,not included,not included,6.0
+2022-23,N1,North East and Yorkshire,60080,Queen Elizabeth Hospital,Lab,NHS_Hospital,A1,295.0,13573.0,550.0,980.0,564.0,not included,not included,not included,307.0
+2022-23,N1,North East and Yorkshire,60080,Queen Elizabeth Hospital,Lab,Private,A1,23.0,5620.0,87.0,114.0,36.0,not included,not included,not included,29.0
+2022-23,N1,North East and Yorkshire,60080,Queen Elizabeth Hospital,Lab,Other,A1,4.0,796.0,23.0,22.0,11.0,not included,not included,not included,7.0
+2022-23,N2,North West,62010,Manchester Cytology Centre,Lab,GP,A1,1827.0,409996.0,4612.0,8841.0,1536.0,not included,not included,not included,1704.0
+2022-23,N2,North West,62010,Manchester Cytology Centre,Lab,NHSCC,A1,20.0,2356.0,45.0,92.0,18.0,not included,not included,not included,17.0
+2022-23,N2,North West,62010,Manchester Cytology Centre,Lab,GUM,A1,13.0,2026.0,39.0,88.0,9.0,not included,not included,not included,24.0
+2022-23,N2,North West,62010,Manchester Cytology Centre,Lab,NHS_Hospital,A1,369.0,13336.0,497.0,1068.0,307.0,not included,not included,not included,239.0
+2022-23,N2,North West,62010,Manchester Cytology Centre,Lab,Private,A1,0.0,0.0,0.0,0.0,0.0,not included,not included,not included,0.0
+2022-23,N2,North West,62010,Manchester Cytology Centre,Lab,Other,A1,2.0,224.0,5.0,6.0,2.0,not included,not included,not included,4.0
+2022-23,N3,Midlands,60370,Royal Derby Hospital,Lab,GP,A1,594.0,272414.0,2833.0,4223.0,1061.0,not included,not included,not included,1135.0
+2022-23,N3,Midlands,60370,Royal Derby Hospital,Lab,NHSCC,A1,0.0,410.0,2.0,19.0,5.0,not included,not included,not included,5.0
+2022-23,N3,Midlands,60370,Royal Derby Hospital,Lab,GUM,A1,4.0,1260.0,19.0,50.0,7.0,not included,not included,not included,11.0
+2022-23,N3,Midlands,60370,Royal Derby Hospital,Lab,NHS_Hospital,A1,64.0,6213.0,250.0,436.0,131.0,not included,not included,not included,116.0
+2022-23,N3,Midlands,60370,Royal Derby Hospital,Lab,Private,A1,1.0,198.0,6.0,2.0,1.0,not included,not included,not included,1.0
+2022-23,N3,Midlands,60370,Royal Derby Hospital,Lab,Other,A1,4.0,154.0,3.0,5.0,0.0,not included,not included,not included,4.0
+2022-23,N3,Midlands,61740,Royal Wolverhampton Hospitals,Lab,GP,A1,942.0,305913.0,5995.0,5884.0,1248.0,not included,not included,not included,1054.0
+2022-23,N3,Midlands,61740,Royal Wolverhampton Hospitals,Lab,NHSCC,A1,5.0,1697.0,46.0,37.0,11.0,not included,not included,not included,10.0
+2022-23,N3,Midlands,61740,Royal Wolverhampton Hospitals,Lab,GUM,A1,4.0,446.0,14.0,12.0,4.0,not included,not included,not included,6.0
+2022-23,N3,Midlands,61740,Royal Wolverhampton Hospitals,Lab,NHS_Hospital,A1,94.0,6817.0,434.0,558.0,151.0,not included,not included,not included,122.0
+2022-23,N3,Midlands,61740,Royal Wolverhampton Hospitals,Lab,Private,A1,0.0,24.0,1.0,0.0,0.0,not included,not included,not included,0.0
+2022-23,N3,Midlands,61740,Royal Wolverhampton Hospitals,Lab,Other,A1,5.0,754.0,14.0,12.0,3.0,not included,not included,not included,3.0
+2022-23,N4,East of England,60540,Norfolk and Norwich University Hospital,Lab,GP,A1,1385.0,376307.0,4640.0,6233.0,1471.0,not included,not included,not included,1652.0
+2022-23,N4,East of England,60540,Norfolk and Norwich University Hospital,Lab,NHSCC,A1,1.0,227.0,2.0,3.0,3.0,not included,not included,not included,1.0
+2022-23,N4,East of England,60540,Norfolk and Norwich University Hospital,Lab,GUM,A1,1.0,147.0,3.0,6.0,0.0,not included,not included,not included,2.0
+2022-23,N4,East of England,60540,Norfolk and Norwich University Hospital,Lab,NHS_Hospital,A1,113.0,6324.0,242.0,397.0,163.0,not included,not included,not included,179.0
+2022-23,N4,East of England,60540,Norfolk and Norwich University Hospital,Lab,Private,A1,0.0,10.0,0.0,0.0,0.0,not included,not included,not included,0.0
+2022-23,N4,East of England,60540,Norfolk and Norwich University Hospital,Lab,Other,A1,1.0,445.0,11.0,14.0,1.0,not included,not included,not included,3.0
+2022-23,N5,London,61025,Health Service Laboratories Cervical Cytology Service,Lab,GP,A1,5756.0,593229.0,9038.0,25901.0,4486.0,not included,not included,not included,2720.0
+2022-23,N5,London,61025,Health Service Laboratories Cervical Cytology Service,Lab,NHSCC,A1,22.0,1075.0,21.0,54.0,13.0,not included,not included,not included,6.0
+2022-23,N5,London,61025,Health Service Laboratories Cervical Cytology Service,Lab,GUM,A1,55.0,3350.0,66.0,232.0,44.0,not included,not included,not included,26.0
+2022-23,N5,London,61025,Health Service Laboratories Cervical Cytology Service,Lab,NHS_Hospital,A1,583.0,21528.0,1759.0,4635.0,1310.0,not included,not included,not included,579.0
+2022-23,N5,London,61025,Health Service Laboratories Cervical Cytology Service,Lab,Private,A1,0.0,2.0,0.0,0.0,0.0,not included,not included,not included,0.0
+2022-23,N5,London,61025,Health Service Laboratories Cervical Cytology Service,Lab,Other,A1,0.0,9.0,0.0,1.0,0.0,not included,not included,not included,1.0
+2022-23,N6,South East,61290,Berkshire and Surrey Pathology Services,Lab,GP,A1,3245.0,530213.0,8062.0,17231.0,4239.0,not included,not included,not included,2666.0
+2022-23,N6,South East,61290,Berkshire and Surrey Pathology Services,Lab,NHSCC,A1,44.0,6579.0,109.0,225.0,38.0,not included,not included,not included,26.0
+2022-23,N6,South East,61290,Berkshire and Surrey Pathology Services,Lab,GUM,A1,13.0,1327.0,38.0,100.0,24.0,not included,not included,not included,19.0
+2022-23,N6,South East,61290,Berkshire and Surrey Pathology Services,Lab,NHS_Hospital,A1,290.0,11188.0,541.0,1474.0,522.0,not included,not included,not included,319.0
+2022-23,N6,South East,61290,Berkshire and Surrey Pathology Services,Lab,Private,A1,2.0,321.0,61.0,25.0,4.0,not included,not included,not included,4.0
+2022-23,N6,South East,61290,Berkshire and Surrey Pathology Services,Lab,Other,A1,18.0,2021.0,42.0,97.0,25.0,not included,not included,not included,13.0
+2022-23,N7,South West,61590,Southmead Hospital,Lab,GP,A1,2597.0,263410.0,2798.0,4585.0,995.0,not included,not included,not included,836.0
+2022-23,N7,South West,61590,Southmead Hospital,Lab,NHSCC,A1,5.0,580.0,8.0,20.0,1.0,not included,not included,not included,2.0
+2022-23,N7,South West,61590,Southmead Hospital,Lab,GUM,A1,21.0,1092.0,22.0,47.0,10.0,not included,not included,not included,7.0
+2022-23,N7,South West,61590,Southmead Hospital,Lab,NHS_Hospital,A1,139.0,7226.0,220.0,413.0,128.0,not included,not included,not included,85.0
+2022-23,N7,South West,61590,Southmead Hospital,Lab,Private,A1,5.0,235.0,0.0,5.0,0.0,not included,not included,not included,1.0
+2022-23,N7,South West,61590,Southmead Hospital,Lab,Other,A1,47.0,3729.0,45.0,58.0,13.0,not included,not included,not included,13.0

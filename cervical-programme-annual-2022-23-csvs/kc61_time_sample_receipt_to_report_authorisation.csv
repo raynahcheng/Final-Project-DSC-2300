@@ -1,0 +1,17 @@
+CollectionYearRange,Parent_Org_Code,Parent_Org_Name,Org_Code,Org_Name,Org_Type,Part,0-2_Weeks,3-4_Weeks,5-6_Weeks,7-8_Weeks,9-10_Weeks,>10_Weeks
+2022-23,E92000001,England,E92000001,England,National,A2,3101482.0,355394.0,52889.0,24007.0,9528.0,358.0
+2022-23,N1,North East and Yorkshire,N1,North East and Yorkshire,Region,A2,455442.0,48884.0,8944.0,32.0,5.0,17.0
+2022-23,N2,North West,N2,North West,Region,A2,293863.0,108395.0,25643.0,18925.0,2224.0,272.0
+2022-23,N3,Midlands,N3,Midlands,Region,A2,520903.0,87222.0,15561.0,257.0,9.0,9.0
+2022-23,N4,East of England,N4,East of England,Region,A2,344591.0,54533.0,862.0,1.0,0.0,0.0
+2022-23,N5,London,N5,London,Region,A2,635361.0,41039.0,53.0,10.0,4.0,34.0
+2022-23,N6,South East,N6,South East,Region,A2,565868.0,11405.0,1807.0,4780.0,7286.0,19.0
+2022-23,N7,South West,N7,South West,Region,A2,285454.0,3916.0,19.0,2.0,0.0,7.0
+2022-23,N1,North East and Yorkshire,60080,Queen Elizabeth Hospital,Lab,A2,455442.0,48884.0,8944.0,32.0,5.0,17.0
+2022-23,N2,North West,62010,Manchester Cytology Centre,Lab,A2,293863.0,108395.0,25643.0,18925.0,2224.0,272.0
+2022-23,N3,Midlands,60370,Royal Derby Hospital,Lab,A2,188933.0,86951.0,15499.0,241.0,8.0,9.0
+2022-23,N3,Midlands,61740,Royal Wolverhampton Hospitals,Lab,A2,331970.0,271.0,62.0,16.0,1.0,0.0
+2022-23,N4,East of England,60540,Norfolk and Norwich University Hospital,Lab,A2,344591.0,54533.0,862.0,1.0,0.0,0.0
+2022-23,N5,London,61025,Health Service Laboratories Cervical Cytology Service,Lab,A2,635361.0,41039.0,53.0,10.0,4.0,34.0
+2022-23,N6,South East,61290,Berkshire and Surrey Pathology Services,Lab,A2,565868.0,11405.0,1807.0,4780.0,7286.0,19.0
+2022-23,N7,South West,61590,Southmead Hospital,Lab,A2,285454.0,3916.0,19.0,2.0,0.0,7.0
