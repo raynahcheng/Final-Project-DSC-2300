@@ -70,3 +70,17 @@ hist(ages30to34$Borderline_changes, breaks = 10,
      xlab = "Cases")
 
 mtext("Instances of Borderline Changes (Differing Sources)", outer = TRUE, cex = 1, line = -1.5)
+
+severe_less20 <- severe_NA[severe_NA$Indicator == 1, ]
+hist(severe_less20$Severe_dyskaryosis, breaks = 10,
+     main = "Women <20 Years Old",
+     xlab = "Cases") 
+
+
+colfunc <- colorRampPalette(c("cadetblue2", "darkolivegreen3", "darkgreen"))
+age_color <- fields::color.scale(source$Indicator, col = colfunc(19))
+
+par(mfrow = c(1, 3))
+plot(source$Borderline_changes, source$Mild_dyskaryosis, col = age_color, pch = 19)
+plot(source$Borderline_changes, source$Moderate_dyskaryosis, col = age_color, pch = 19)
+plot(source$Borderline_changes, source$Severe_dyskaryosis, col = age_color, pch = 19)
