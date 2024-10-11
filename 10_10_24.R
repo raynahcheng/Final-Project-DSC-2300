@@ -1,7 +1,7 @@
 source <- read.csv("cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
 
 lessthan20 <- source[source$Indicator == "<20", ]
-age20to24 <- source[source$Indicator == "20-24", ]
+ages20to24 <- source[source$Indicator == "20-24", ]
 age25to29 <- source[source$Indicator == "25-29", ]
 ages30to34 <- source[source$Indicator == "30-34", ]
 ages35to39 <- source[source$Indicator == "35-39", ]
@@ -58,5 +58,15 @@ severe_NA$Severe_dyskaryosis <- as.numeric(severe_NA$Severe_dyskaryosis)
 summary(severe_NA$Severe_dyskaryosis)
 
 
+par(mfrow = c(1, 3))
+hist(lessthan20$Borderline_changes, breaks = 10,
+     main = "Women <20 Years Old",
+     xlab = "Cases")
+hist(ages20to24$Borderline_changes, breaks = 10,
+     main = "Women 20-24 Years Old",
+     xlab = "Cases")
+hist(ages30to34$Borderline_changes, breaks = 10,
+     main = "Women 30-34 Years Old",
+     xlab = "Cases")
 
-for(i in)
+mtext("Instances of Borderline Changes (Differing Sources)", outer = TRUE, cex = 1, line = -1.5)
