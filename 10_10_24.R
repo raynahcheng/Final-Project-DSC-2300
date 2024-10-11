@@ -22,19 +22,16 @@ other <- source[source$Indicator == "Other", ]
 
 
 uniq_ind <- unique(source$Indicator)
-
-summary_matrix <- matrix()
-
-
-
-temp <- as.numeric(source$Indicator)
-class(temp)
-
-source$Indicator <- gsub("<20", 20, source$Indicator)
-
 for (i in 1:length(uniq_ind)){
   source$Indicator <- gsub(uniq_ind[i], i, source$Indicator)
 } 
+source$Indicator <- as.numeric(source$Indicator)
+
+for (i in 1:length(uniq_ind)){
+  df <- data.frame(source[source$Indicator == i, ])
+  df_name <- paste("df", i)
+  assign(df_name, df)
+}
 
 for(i in 1:length(uniq_ind)){
   source_ind <- source[source$Indicator == (uniq_ind[i]), ]
@@ -84,3 +81,17 @@ par(mfrow = c(1, 3))
 plot(source$Borderline_changes, source$Mild_dyskaryosis, col = age_color, pch = 19)
 plot(source$Borderline_changes, source$Moderate_dyskaryosis, col = age_color, pch = 19)
 plot(source$Borderline_changes, source$Severe_dyskaryosis, col = age_color, pch = 19)
+
+
+legend("topleft", legend = unique(source$Indicator),
+       pch = 19,
+       col = colfunc(19),
+       ncol = 3,
+       cex = 1)
+
+
+
+
+
+
+

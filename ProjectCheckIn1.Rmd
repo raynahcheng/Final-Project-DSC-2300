@@ -15,9 +15,8 @@ Below you will find the template for Project Check in 1. Each group member shoul
 - data source and links to any accompanying documentation 
 
 ```{r}
-#TODO: replace this fake example and documentation with your data! 
 source <- 
-  read.csv("Final Project Git/cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
+  read.csv("cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
 
 dim(source)
 
@@ -26,6 +25,7 @@ dim(source)
 #only column that has nas is severe dyskaryosis
 source$Severe_dyskaryosis <- gsub("not included", NA, source$Severe_dyskaryosis)
 sum(is.na(source$Severe_dyskaryosis) == TRUE)
+
 ```
 
 Fisher, R. A. (1936) The use of multiple measurements in taxonomic problems. Annals of Eugenics, 7, Part II, 179–188. [doi:10.1111/j.1469-1809.1936.tb02137.x](doi:10.1111/j.1469-1809.1936.tb02137.x).
@@ -34,33 +34,20 @@ Fisher, R. A. (1936) The use of multiple measurements in taxonomic problems. Ann
 2. Show summary statistics for the five variables of the most interest. 
 
 ```{r results = 'hide'}
-lessthan20 <- source[source$Indicator == "<20", ]
-ages20to24 <- source[source$Indicator == "20-24", ]
-ages25to29 <- source[source$Indicator == "25-29", ]
-ages30to34 <- source[source$Indicator == "30-34", ]
-ages35to39 <- source[source$Indicator == "35-39", ]
-ages40to44 <- source[source$Indicator == "40-44", ]
-ages45to49 <- source[source$Indicator == "45-49", ]
-ages50to54 <- source[source$Indicator == "50-54", ]
-ages55to59 <- source[source$Indicator == "55-59", ]
-ages60to64 <- source[source$Indicator == "60-64", ]
-ages65to69 <- source[source$Indicator == "65-69", ]
-ages70to74 <- source[source$Indicator == "70-74", ]
-greaterthan74 <- source[source$Indicator == ">=75", ]
-GP <- source[source$Indicator == "GP", ]
-NHSCC <- source[source$Indicator == "NHSCC", ]
-GUM <- source[source$Indicator == "GUM", ]
-NHS_Hopsital <- source[source$Indicator == "NHS_Hospital", ]
-private <- source[source$Indicator == "Private", ]
-other <- source[source$Indicator == "Other", ]
-
-
 uniq_ind <- unique(source$Indicator)
-
 for (i in 1:length(uniq_ind)){
   source$Indicator <- gsub(uniq_ind[i], i, source$Indicator)
 } 
+source$Indicator <- as.numeric(source$Indicator)
 #changing each age group to correspond with a number from 1-19. for example, <20 is 1
+
+for (i in 1:length(uniq_ind)){
+  df <- data.frame(source[source$Indicator == i, ])
+  df_name <- paste0("df", i)
+  assign(df_name, df)
+}
+#creating a new data frame for every age group and organizations data was taken from
+#`assign` function taken and adapted from online source
 
 for(i in 1:length(uniq_ind)){
   source_ind <- source[source$Indicator == (uniq_ind[i]), ]
@@ -76,21 +63,43 @@ for(i in 1:length(uniq_ind)){
 
 for(i in 1:length(uniq_ind)){
   source_ind <- source[source$Indicator == (uniq_ind[i]), ]
-  print(summary(source$Moderate_dyskaryosis))
+  print(summary(source_ind$Moderate_dyskaryosis))
 }
 #summary for moderate dyskaryosis for each age group
 
-#removing decimals and converting to numeric values
+#removing NAs and converting to numeric values
 severe_NA <- source[is.na(source$Severe_dyskaryosis) == FALSE, ]
-severe_NA$Severe_dyskaryosis <- gsub(".0", "", severe_NA$Severe_dyskaryosis)
 severe_NA$Severe_dyskaryosis <- as.numeric(severe_NA$Severe_dyskaryosis)
 
 for(i in 1:length(uniq_ind)){
-  source_ind <- severe_NA[source$Indicator == (uniq_ind[i]), ]
-  print(summary(severe_NA$Severe_dyskaryosis))
+  severe_ind <- severe_NA[source$Indicator == (uniq_ind[i]), ]
+  print(summary(severe_ind$Severe_dyskaryosis))
 }
 #summary for severe dyskaryosis for each age group
+#summary output excluded due to large output of information. 
+
 ```
+
+- 1: <20 years old (non-inclusive)
+- 2: 20-24 years old (inclusive)
+- 3: 25-29 years old (inclusive)
+- 4: 30-34 years old (inclusive)
+- 5: 35-39 years old (inclusive)
+- 6: 40-44 years old (inclusive)
+- 7: 45-49 years old (inclusive)
+- 8: 50-54 years old (inclusive)
+- 9: 55-59 years old (inclusive)
+- 10: 60-64 years old (inclusive)
+- 11: 65-69 years old (inclusive)
+- 12: 70-74 years old (inclusive)
+- 13: >=75 years old (inclusive)
+- 14: data taken from GP
+- 15: data taken from NHSCC
+- 16: data taken from GUM
+- 17: data taken from NHS Hospital
+- 18: data taken from Private sources
+- 19: data taken from Other sources
+
 
 3. Show another set of summary statistics by filtering on a column of interest. This could be years, teams, genres. Dig a little deeper here! Think about what might have a different distribution!  
 
@@ -103,13 +112,13 @@ I expect plots to have sensible, nice-looking labels.
 ```{r}
 #borderline changes for each age group
 par(mfrow = c(1, 3))
-hist(lessthan20$Borderline_changes, breaks = 10,
+hist(df1$Borderline_changes, breaks = 10,
      main = "Women <20 Years Old",
      xlab = "Cases")
-hist(ages20to24$Borderline_changes, breaks = 10,
+hist(df2$Borderline_changes, breaks = 10,
      main = "Women 20-24 Years Old",
      xlab = "Cases")
-hist(ages30to34$Borderline_changes, breaks = 10,
+hist(df4$Borderline_changes, breaks = 10,
      main = "Women 30-34 Years Old",
      xlab = "Cases")
 
@@ -117,26 +126,26 @@ mtext("Instances of Borderline Changes (Differing Sources)", outer = TRUE, cex =
 
 
 par(mfrow = c(1, 3))
-hist(lessthan20$Mild_dyskaryosis, breaks = 10,
+hist(df1$Mild_dyskaryosis, breaks = 10,
      main = "Women <20 Years Old",
      xlab = "Cases")
-hist(ages20to24$Mild_dyskaryosis, breaks = 10,
+hist(df2$Mild_dyskaryosis, breaks = 10,
      main = "Women 20-24 Years Old",
      xlab = "Cases")
-hist(ages30to34$Mild_dyskaryosis, breaks = 10,
+hist(df4$Mild_dyskaryosis, breaks = 10,
      main = "Women 30-34 Years Old",
      xlab = "Cases")
 
 mtext("Instances of Mild Dyskaryosis (Differing Sources)", outer = TRUE, cex = 1, line = -1.5)
 
 par(mfrow = c(1, 3))
-hist(lessthan20$Moderate_dyskaryosis, breaks = 10,
+hist(df1$Moderate_dyskaryosis, breaks = 10,
      main = "Women <20 Years Old",
      xlab = "Cases")
-hist(ages20to24$Moderate_dyskaryosis, breaks = 10,
+hist(df2$Moderate_dyskaryosis, breaks = 10,
      main = "Women 20-24 Years Old",
      xlab = "Cases")
-hist(ages30to34$Moderate_dyskaryosis, breaks = 10,
+hist(df4$Moderate_dyskaryosis, breaks = 10,
      main = "Women 30-34 Years Old",
      xlab = "Cases")
 
@@ -159,6 +168,7 @@ hist(severe_30_34$Severe_dyskaryosis, breaks = 10,
      xlab = "Cases")
 
 mtext("Instances of Severe Dyskaryosis (Differing Sources)", outer = TRUE, cex = 1, line = -1.5)
+
 ```
 
 3. Show three scatterplots that show the relationship between variables. Coloring data is a useful dimension to add here! There are [many](https://github.com/karthik/wesanderson) [different](https://www.datanovia.com/en/blog/top-r-color-palettes-to-know-for-great-data-visualization/#viridis-color-palettes) [ways](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf) to generate color palettes in R, but the general process here is the same: 
@@ -167,7 +177,6 @@ mtext("Instances of Severe Dyskaryosis (Differing Sources)", outer = TRUE, cex =
 - map the variable to the variables. We've done this using fields::color.scale() in class. Or get fancy with for loops and overplotting 
 - generate plot! 
 
-
 Extremely optional: You can turn your points into emojis with the [emojifont package](https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html)
 
 ```{r}
@@ -175,24 +184,23 @@ colfunc <- colorRampPalette(c("cadetblue2", "darkolivegreen3", "darkgreen"))
 age_color <- fields::color.scale(source$Indicator, col = colfunc(19))
 
 par(mfrow = c(1, 3))
-
-
 plot(source$Borderline_changes, source$Mild_dyskaryosis, col = age_color, 
      pch = 19, xlab = "Borderline Changes", ylab = "Mild Dyskaryosis")
-legend("topleft", legend = unique(source$Indicator), pch = 19, ncol = 2, col = colfunc(19), cex = .6)
+legend("topleft", legend = uniq_ind, pch = 19, col = colfunc(19), cex = .6)
 
 plot(source$Borderline_changes, source$Moderate_dyskaryosis, col = age_color, 
      pch = 19, xlab = "Borderline Changes", ylab = "Moderate Dyskaryosis")
-legend("topleft", legend = unique(source$Indicator), pch = 19, ncol = 2, col = colfunc(19), cex = .6)
+legend("topleft", legend = uniq_ind, pch = 19, col = colfunc(19), cex = .6)
+
 plot(source$Borderline_changes, source$Severe_dyskaryosis, col = age_color, 
      pch = 19, xlab = "Borderline Changes", ylab = "Severe Dyskaryosis")
-legend("topleft", legend = unique(source$Indicator), pch = 19, ncol = 2, col = colfunc(19), cex = .6)
+legend("topleft", legend = uniq_ind, pch = 19, ncol = 2, col = colfunc(19), cex = .6)
 
 mtext("Comparison of Borderline Changes vs. Mild/Moderate/Severe Dyskaryosis 
       (colored by age)", outer = TRUE, cex = 1, line = -3)
 
-
 ```
 
 4. Write a few sentences about the observations you see in the above plots. Provide any context where necessary. 
-We see a general trend of increase in mild to severe dyskaryosis along with borderline changes, showing the increase of more severe cervical cancer cases with the increase of borderline changes observed. The data is colored by age, showing a higher number of cases for younger to mid-age patients. The older patients, along with data collected from independent organizations are shown to have less cases observed. 
+
+- We see a general trend of increase in mild to severe dyskaryosis along with borderline changes, showing the increase of more severe cervical cancer cases with the increase of observed borderline changes. The data is colored by age, showing a higher number of cases for younger to mid-age patients. The older patients, along with data collected from differing organizations, are shown to have less cases observed. There is an obvious outlier at the top right corner of each graph, this is because the data collected from GP (general practitioners) have substantially more data compared to other sources and age groups. 
