@@ -1,0 +1,239 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r, include=FALSE}
+source <- 
+  read.csv("kc61_sample_result_age_source.csv")
+
+dim(source)
+
+#columns of interest: Indicator (age), Borderline changes, mild, moderate,
+#and severe dyskaryosis
+
+#only column that has NA's is severe dyskaryosis; sub in values for NA to clean
+source$Severe_dyskaryosis <- gsub("not included", NA, source$Severe_dyskaryosis)
+sum(is.na(source$Severe_dyskaryosis) == TRUE)
+
+uniq_ind <- unique(source$Indicator)
+for (i in 1:length(uniq_ind)){
+  source$Indicator <- gsub(uniq_ind[i], i, source$Indicator)
+} 
+source$Indicator <- as.numeric(source$Indicator)
+#changing each age group to correspond with a number from 1-19. for example, <20 is 1
+
+for (i in 1:length(uniq_ind)){
+  df <- data.frame(source[source$Indicator == i, ])
+  df_name <- paste0("df", i)
+  assign(df_name, df)
+}
+#creating a new data frame for every age group and organizations data was taken from
+#`assign` function taken and adapted from online source
+
+for(i in 1:length(uniq_ind)){
+  source_ind <- source[source$Indicator == (uniq_ind[i]), ]
+  print(summary(source_ind$Borderline_changes))
+}
+#summary for borderline changes for each age group
+
+for(i in 1:length(uniq_ind)){
+  source_ind <- source[source$Indicator == (uniq_ind[i]), ]
+  print(summary(source_ind$Mild_dyskaryosis))
+}
+#summary for mild dyskaryosis for each age group
+
+for(i in 1:length(uniq_ind)){
+  source_ind <- source[source$Indicator == (uniq_ind[i]), ]
+  print(summary(source_ind$Moderate_dyskaryosis))
+}
+#summary for moderate dyskaryosis for each age group
+
+#removing NAs and converting to numeric values
+severe_NA <- source[is.na(source$Severe_dyskaryosis) == FALSE, ]
+severe_NA$Severe_dyskaryosis <- as.numeric(severe_NA$Severe_dyskaryosis)
+
+for(i in 1:length(uniq_ind)){
+  severe_ind <- severe_NA[source$Indicator == (uniq_ind[i]), ]
+  print(summary(severe_ind$Severe_dyskaryosis))
+}
+#summary for severe dyskaryosis for each age group
+#summary output excluded due to large output of information.
+
+#borderline changes for each age group
+par(mfrow = c(1, 3))
+hist(df1$Borderline_changes, breaks = 10,
+     main = "Women <20 Years Old",
+     xlab = "Cases")
+hist(df2$Borderline_changes, breaks = 10,
+     main = "Women 20-24 Years Old",
+     xlab = "Cases")
+hist(df4$Borderline_changes, breaks = 10,
+     main = "Women 30-34 Years Old",
+     xlab = "Cases")
+
+mtext("Instances of Borderline Changes (Differing Sources)", outer = TRUE, cex = 1, line = -1.5)
+
+
+par(mfrow = c(1, 3))
+hist(df1$Mild_dyskaryosis, breaks = 10,
+     main = "Women <20 Years Old",
+     xlab = "Cases")
+hist(df2$Mild_dyskaryosis, breaks = 10,
+     main = "Women 20-24 Years Old",
+     xlab = "Cases")
+hist(df4$Mild_dyskaryosis, breaks = 10,
+     main = "Women 30-34 Years Old",
+     xlab = "Cases")
+
+mtext("Instances of Mild Dyskaryosis (Differing Sources)", outer = TRUE, cex = 1, line = -1.5)
+
+par(mfrow = c(1, 3))
+hist(df1$Moderate_dyskaryosis, breaks = 10,
+     main = "Women <20 Years Old",
+     xlab = "Cases")
+hist(df2$Moderate_dyskaryosis, breaks = 10,
+     main = "Women 20-24 Years Old",
+     xlab = "Cases")
+hist(df4$Moderate_dyskaryosis, breaks = 10,
+     main = "Women 30-34 Years Old",
+     xlab = "Cases")
+
+mtext("Instances of Moderate Dyskaryosis (Differing Sources)", outer = TRUE, cex = 1, line = -1.5)
+
+par(mfrow = c(1, 3))
+severe_less20 <- severe_NA[severe_NA$Indicator == 1,]
+hist(severe_less20$Severe_dyskaryosis, breaks = 10,
+     main = "Women <20 Years Old",
+     xlab = "Cases")
+
+severe_20_24 <- severe_NA[severe_NA$Indicator == 2,]
+hist(severe_20_24$Severe_dyskaryosis, breaks = 10,
+     main = "Women 20-24 Years Old",
+     xlab = "Cases")
+
+severe_30_34 <- severe_NA[severe_NA$Indicator == 5,]
+hist(severe_30_34$Severe_dyskaryosis, breaks = 10,
+     main = "Women 30-34 Years Old",
+     xlab = "Cases")
+
+mtext("Instances of Severe Dyskaryosis (Differing Sources)", outer = TRUE, cex = 1, line = -1.5)
+
+colfunc <- colorRampPalette(c("cadetblue2", "darkolivegreen3", "darkgreen"))
+age_color <- fields::color.scale(source$Indicator, col = colfunc(19))
+
+par(mfrow = c(1, 3))
+plot(source$Borderline_changes, source$Mild_dyskaryosis, col = age_color, 
+     pch = 19, xlab = "Borderline Changes", ylab = "Mild Dyskaryosis")
+legend("topleft", legend = uniq_ind, pch = 19, col = colfunc(19), cex = .6)
+
+plot(source$Borderline_changes, source$Moderate_dyskaryosis, col = age_color, 
+     pch = 19, xlab = "Borderline Changes", ylab = "Moderate Dyskaryosis")
+legend("topleft", legend = uniq_ind, pch = 19, col = colfunc(19), cex = .6)
+
+plot(source$Borderline_changes, source$Severe_dyskaryosis, col = age_color, 
+     pch = 19, xlab = "Borderline Changes", ylab = "Severe Dyskaryosis")
+legend("topleft", legend = uniq_ind, pch = 19, ncol = 2, col = colfunc(19), cex = .6)
+
+mtext("Comparison of Borderline Changes vs. Mild/Moderate/Severe Dyskaryosis 
+      (colored by age)", outer = TRUE, cex = 1, line = -3)
+
+```
+
+
+The above was all copied from the project check in 1 document. It will not appear in the knitted file because it is suppressed.
+
+
+First, we will subset the data for borderline changes, mild, moderate, and severe dyskaryosis into a separate data frame. Then the pairs function will be run to determine any reasonable relationships.
+```{r}
+## Subset source data for only borderline changes and mild, moderate, severe dyskaryosis
+
+comparison_data <- source[,c("Borderline_changes", "Mild_dyskaryosis", "Moderate_dyskaryosis","Severe_dyskaryosis")]
+comparison_data$Severe_dyskaryosis <- as.numeric(comparison_data$Severe_dyskaryosis)
+
+pairs(comparison_data)
+```
+
+First, we will run a linear regression for all of these relationships as they appear to have decently strong relationships.
+
+
+**Unscaled plots**
+```{r}
+# Mild Dyskaryosis
+lm_model_mild <- lm(Mild_dyskaryosis ~ Borderline_changes, data = comparison_data)
+summary(lm_model_mild)
+plot(comparison_data$Borderline_changes, comparison_data$Mild_dyskaryosis,
+     main = "Mild Dyskaryosis vs Borderline Changes",
+     xlab = "Borderline Changes",
+     ylab = "Mild Dyskaryosis")
+abline(lm_model_mild, col = 'red')
+
+# Moderate Dyskaryosis
+lm_model_mod <- lm(Moderate_dyskaryosis ~ Borderline_changes, data = comparison_data)
+summary(lm_model_mod)
+plot(comparison_data$Borderline_changes, comparison_data$Moderate_dyskaryosis,
+     main = "Moderate Dyskaryosis vs Borderline Changes",
+     xlab = "Borderline Changes",
+     ylab = "Moderate Dyskaryosis")
+abline(lm_model_mild, col = 'purple')
+
+# Severe Dyskaryosis
+lm_model_severe <- lm(Severe_dyskaryosis ~ Borderline_changes, data = comparison_data)
+summary(lm_model_severe)
+plot(comparison_data$Borderline_changes, comparison_data$Severe_dyskaryosis,
+     main = "Severe Dyskaryosis vs Borderline Changes",
+     xlab = "Borderline Changes",
+     ylab = "Severe Dyskaryosis")
+abline(lm_model_severe, col = 'blue')
+```
+
+
+**Scaled Plots**
+
+```{r}
+scaled_data <- as.data.frame(scale(comparison_data))
+
+# mild dyskaryosis scaled
+scaled_mild_model <- lm(Mild_dyskaryosis ~ Borderline_changes, data = scaled_data)
+plot(scaled_data$Borderline_changes, scaled_data$Mild_dyskaryosis,
+     main = "Scaled Mild Dyskaryosis vs Borderline Changes",
+     xlab = "Borderline Changes",
+     ylab = "Mild Dyskaryosis")
+abline(scaled_mild_model, col = 'red')
+summary(scaled_mild_model)
+
+# moderate dyskaryosis scaled
+scaled_mod_model <- lm(Moderate_dyskaryosis ~ Borderline_changes, data = scaled_data)
+plot(scaled_data$Borderline_changes, scaled_data$Moderate_dyskaryosis,
+     main = "Scaled Moderate Dyskaryosis vs Borderline Changes",
+     xlab = "Borderline Changes",
+     ylab = "Moderate Dyskaryosis")
+abline(scaled_mod_model, col = 'purple')
+summary(scaled_mod_model)
+
+# severe dyskaryosis scaled
+scaled_severe_model <- lm(Severe_dyskaryosis ~ Borderline_changes, data = scaled_data)
+plot(scaled_data$Borderline_changes, scaled_data$Severe_dyskaryosis,
+     main = "Scaled Severe Dyskaryosis vs Borderline Changes",
+     xlab = "Borderline Changes",
+     ylab = "Severe Dyskaryosis")
+abline(scaled_severe_model, col = 'blue')
+summary(scaled_severe_model)
+```
+
+For the first linear regression model of Mild Dyskaryosis vs Borderline Changes, the coefficient of the slope of the line was significant with an alpha level of <0.001. The intercept of the line was not significant at any level. The adjusted R-squared value is 0.758, indicating that 75.8% of the variance in the data can be explained by the model. The F statistic is large with a p-value < 0.05, indicating that this regression is significant.
+
+For the second linear regression model of Moderate Dyskaryosis vs Borderline Changes, the coefficient of the slope of the line was significant with an alpha level of <0.001. The intercept of the line was not significant at any level. The adjusted R-squared value is 0.7823, inidcating that 78.23% of the variance in the data can be explained by the model. The F statistic is large with a p-value < 0.05, indicating that this regression is significant.
+
+For the third linear regression model of Severe Dyskaryosis vs Borderline Changes, the coefficient of the slope of the line was significant with an alpha level of <0.001. The intercept of the line was not significant at any level. The adjusted R-squared value is 0.8387, indicating that 83.87% of the variance in the data can be explained by the model. The F statistic is large with a p-value of < 0.05, indicating that this regression is significant.
+
+The regression model of Severe Dyskaryosis vs Borderline Changes appears to be the best at predicting incidence of severe dyskaryosis from borderline changes due to it having the largest F-statistic value (1244) as well as the largest adjusted R-squared value (0.8387). This could be because borderline changes in a neoplasma will typically be larger and more easily detectable in later stage cancers, meaning that large borderline changes would have a higher correlation with severe dyskaryosis.
+
+
+**Clustering**
+```{r}
+pairwise_dist <- dist(scaled_data)
+mds_2d <- cmdscale(pairwise_dist, k = 2)
+plot(mds_2d)
+```
+
