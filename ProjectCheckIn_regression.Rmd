@@ -237,3 +237,5 @@ mds_2d <- cmdscale(pairwise_dist, k = 2)
 plot(mds_2d)
 ```
 
+
+
