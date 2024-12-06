@@ -11,8 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Project Check-In 2
-### Paulina Yao
+## Stacked Barplots
 
 After shifting through the data and trying to understand the information better, I found that the data might be better interpreted through a different type of visualization. While I wasn't able to complete a regression analysis for this project check-in, I continued from my work cleaning the data to create barplots.
 
@@ -42,38 +41,289 @@ severe_NA$Severe_dyskaryosis <- as.numeric(severe_NA$Severe_dyskaryosis)
 # all code taken above are taken from initial ProjectCheckIn document
 # all code was used for cleaning data
 
-plot <- severe_NA[1:10, 9:14]
+suppressMessages(library(viridisLite))
+suppressMessages(library(viridis))
+suppressMessages(library(fields))
+
+diagnosis_color <- color.scale(1:6, viridis(6))
+diagnosis_col <- which(colnames(severe_NA) == "Inadequate" |
+                         colnames(severe_NA) == "Negative" |
+                         colnames(severe_NA) == "Borderline_changes" |
+                         colnames(severe_NA) == "Mild_dyskaryosis" |
+                         colnames(severe_NA) == "Moderate_dyskaryosis" | 
+                         colnames(severe_NA) == "Severe_dyskaryosis")
+
+par(mfrow = c(1,2), oma = c(0, 0, 2, 0))
+for (i in 1:2) {
+  y <- c("2012-13", "2015-16", "2018-19", "2022-23")
+  df <- which(severe_NA$CollectionYearRange == y[i] & 
+                severe_NA$Org_Name == "England" &
+                suppressWarnings(severe_NA$Indicator == c(1:13)))
+  plot <- severe_NA[df, diagnosis_col]
+  plot <- t(plot)
+  rownames(plot) <- c("Inadequate", "Negative", 
+                    "Borderline", "Mild",
+                    "Moderate", "Severe")
+  colnames(plot) <- c("<20", "20-24", "25-29", "30-34", "35-39", 
+                      "40-44", "45-49", "50-54", "55-59", "60-64", 
+                      "65-69", "70-74", ">=75")
+  plot_title <- c("2012-2013", "2015-2016", "2018-2019", "2022-2023")
+  plot <- as.matrix(plot)
+  
+  barplot(plot,
+        col = diagnosis_color,
+        legend.text = row.names(plot),
+        args.legend = list(x = "topright", cex = 0.7, bty = "n"),
+        main = plot_title[i],
+        xlab = "Age Groups (years)",
+        ylab = "Count")
+}
+mtext("Cervical Screening Distribution (England)", side = 3, outer = TRUE, font = 2)
+
+```
+
+\ 
+
+```{r, echo = FALSE}
+par(mfrow = c(1,2), oma = c(0, 0, 2, 0))
+for (i in 3:4) {
+  y <- c("2012-13", "2015-16", "2018-19", "2022-23")
+  df <- which(severe_NA$CollectionYearRange == y[i] & 
+                severe_NA$Org_Name == "England" &
+                suppressWarnings(severe_NA$Indicator == c(1:13)))
+  plot <- severe_NA[df, diagnosis_col]
+  plot <- t(plot)
+  rownames(plot) <- c("Inadequate", "Negative", 
+                    "Borderline", "Mild",
+                    "Moderate", "Severe")
+  colnames(plot) <- c("<20", "20-24", "25-29", "30-34", "35-39", 
+                      "40-44", "45-49", "50-54", "55-59", "60-64", 
+                      "65-69", "70-74", ">=75")
+  plot_title <- c("2012-2013", "2015-2016", "2018-2019", "2022-2023")
+  plot <- as.matrix(plot)
+  
+  barplot(plot,
+        col = diagnosis_color,
+        legend.text = row.names(plot),
+        args.legend = list(x = "topright", cex = 0.7, bty = "n"),
+        main = plot_title[i],
+        xlab = "Age Groups (years)",
+        ylab = "Count")
+}
+mtext("Cervical Screening Distribution (England)", side = 3, outer = TRUE, font = 2)
+
+```
+
+Each row of graphs were coded by the same `for` loop, running through different `i`'s. The code of the second row of graphs were excluded to minimize redundancy. The same is done for the next set of graphs.
+
+
+
+```{r}
+par(mfrow = c(1,2), oma = c(0 , 0, 2, 0))
+for (i in 1:2) {
+  y <- c("2012-13", "2015-16", "2018-19", "2022-23")
+  df <- which(severe_NA$CollectionYearRange == y[i] & 
+                severe_NA$Org_Name == "England" &
+                suppressWarnings(severe_NA$Indicator == c(1:13)))
+  df <- which(severe_NA$CollectionYearRange == y[i])
+  plot <- severe_NA[df, diagnosis_col]
+  plot <- t(plot)
+  rownames(plot) <- c("Inadequate", "Negative", 
+                    "Borderline", "Mild",
+                    "Moderate", "Severe")
+  colnames(plot) <- c("<20", "20-24", "25-29", "30-34", "35-39", 
+                      "40-44", "45-49", "50-54", "55-59", "60-64", 
+                      "65-69", "70-74", ">=75")
+  plot_title <- c("2012-2013", "2015-2016", "2018-2019", "2022-2023")
+  plot <- as.matrix(plot)
+  plot_2 <- plot[-(1:2), ]
+  
+  barplot(plot_2,
+        col = diagnosis_color[c(3:6)],
+        legend.text = row.names(plot_2),
+        args.legend = list(x = "topright", cex = 0.7, bty = "n"),
+        main = plot_title[i],
+        xlab = "Age Groups (years)",
+        ylab = "Count")
+}
+mtext("Diagnoses Result Distribution (England)", side = 3, outer = TRUE, font = 2)
+```
+
+\ 
+
+```{r, echo = FALSE}
+par(mfrow = c(1,2), oma = c(0 , 0, 2, 0))
+for (i in 3:4) {
+  y <- c("2012-13", "2015-16", "2018-19", "2022-23")
+  df <- which(severe_NA$CollectionYearRange == y[i] & 
+                severe_NA$Org_Name == "England" &
+                suppressWarnings(severe_NA$Indicator == c(1:13)))
+  plot <- severe_NA[df, diagnosis_col]
+  plot <- t(plot)
+  rownames(plot) <- c("Inadequate", "Negative", 
+                    "Borderline", "Mild",
+                    "Moderate", "Severe")
+  colnames(plot) <- c("<20", "20-24", "25-29", "30-34", "35-39", 
+                      "40-44", "45-49", "50-54", "55-59", "60-64", 
+                      "65-69", "70-74", ">=75")
+  plot_title <- c("2012-2013", "2015-2016", "2018-2019", "2022-2023")
+  plot <- as.matrix(plot)
+  plot_2 <- plot[-(1:2), ]
+  
+  barplot(plot_2,
+        col = diagnosis_color[c(3:6)],
+        legend.text = row.names(plot_2),
+        args.legend = list(x = "topright", cex = 0.7, bty = "n"),
+        main = plot_title[i],
+        xlab = "Age Groups (years)",
+        ylab = "Count")
+}
+mtext("Diagnoses Result Distribution (England)", side = 3, outer = TRUE, font = 2)
+```
+
+```{r ,include = FALSE}
+# preliminary code in order to incorporate 2022-2023 into the for loop
+# this section of code is not used in the actual graphs
+
+par(mfrow = c(1,2), oma = c(0, 0, 2, 0))
+england_2223 <- which(severe_NA$CollectionYearRange == "2022-23" & 
+                        severe_NA$Org_Name == "England")
+plot <- severe_NA[england_2223, diagnosis_col]
+plot <- plot[-c(14:19), ]
 plot <- t(plot)
+rownames(plot) <- c("Inadequate", "Negative", 
+                    "Borderline", "Mild",
+                    "Moderate", "Severe")
+colnames(plot) <- c("<20", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", ">=75")
 plot <- as.matrix(plot)
 
 barplot(plot,
-        col = c("red", "orange", "yellow", "green", "blue", "purple"),
+        col = diagnosis_color,
         legend.text = row.names(plot),
-        args.legend = list(x = "topright", cex = 0.7),
-        main = "Distribution of Diagnosis (England 2012-2013)",
+        args.legend = list(x = "topright", cex = 0.7, bty = "n"),
+        main = "2022-2023",
         xlab = "Age Groups (years)",
         ylab = "Count")
 
-# As we can see the data has a lot of data for negative or inadequate data
-# However, because of the large numbers of data, the plot is out of proportions
-# The negative or inadequate was removed for a more conclusive plot
+plot_2223 <- plot[-(1:2), ]
+
+barplot(plot_2223,
+        col = diagnosis_color[c(3:6)],
+        legend.text = row.names(plot_2223),
+        args.legend = list(x = "topright", cex = 0.7, bty = "n"),
+        main = "2022-2023",
+        xlab = "Age Groups (years)",
+        ylab = "Count")
+mtext("Cervical Screening & Diagnoses Result Distribution (England)", side = 3, outer = TRUE, font = 2)
+
+```
+
+```{r, include = FALSE}
+# initial code prepared for `for` loop
+# this section of code is not used in the actual graphs
+
+england_1213 <- which(severe_NA$CollectionYearRange == "2012-13")
+england_1516 <- which(severe_NA$CollectionYearRange == "2015-16")
+england_1819 <- which(severe_NA$CollectionYearRange == "2018-19")
+diagnosis_col <- which(colnames(severe_NA) == "Inadequate" |
+                         colnames(severe_NA) == "Negative" |
+                         colnames(severe_NA) == "Borderline_changes" |
+                         colnames(severe_NA) == "Mild_dyskaryosis" |
+                         colnames(severe_NA) == "Moderate_dyskaryosis" | 
+                         colnames(severe_NA) == "Severe_dyskaryosis")
+
+plot <- severe_NA[england_1213, diagnosis_col]
+plot <- t(plot)
+rownames(plot) <- c("Inadequate", "Negative", 
+                    "Borderline Changes", "Mild Dyskaryosis",
+                    "Moderate Dyskaryosis", "Severe Dyskaryosis")
+colnames(plot) <- c("<20", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", ">=75")
+plot <- as.matrix(plot)
+
+barplot(plot,
+        col = diagnosis_color,
+        legend.text = row.names(plot),
+        args.legend = list(x = "topright", cex = 0.5),
+        main = "Cervical Screening Distribution (England 2012-2013)",
+        xlab = "Age Groups (years)",
+        ylab = "Count")
 
 plot_1213 <- plot[-(1:2), ]
-rownames(plot_1213) <- c("Borderline Changes", "Mild Dyskaryosis", 
-                                "Moderate Dyskaryosis", "Severe Dyskaryosis")
-colnames(plot_1213) <- c("<20", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64")
 
 barplot(plot_1213,
-        col = c("cadetblue2", "cadetblue", "darkolivegreen3", "darkgreen"),
+        col = diagnosis_color[c(3:6)],
         legend.text = row.names(plot_1213),
-        main = "Distribution of Diagnosis (England 2012-2013)",
+        args.legend = list(x = "topright", cex = 0.5),
+        main = "Positive Diagnosis Distribution (England 2012-2013)",
         xlab = "Age Groups (years)",
         ylab = "Count")
 
 ```
 
-This is a very preliminary evaluation of the data that is given. There will be more worked done to better visualize the raw data, and this might give a better idea of what models that need to be ran in the future. 
+From these bar graphs, we can observe that the general trend of diagnoses has decreased throughout the years. This means that there is an absolute decrease in the amount of patients that are diagnosed for any type of cervical tissue changes. We also see that the number of diagnoses for severe dyskaryosis has decreased as well. This change could be explained by the increasing administration of the HPV vaccine.
 
 
 
+\ 
+
+## Lasso Model
+
+```{r}
+row_select <- sample(1:nrow(severe_NA), nrow(severe_NA) / 2)
+col_exclude <- c(1:8, 17)
+
+source_train <- severe_NA[row_select, -col_exclude]
+source_test <- severe_NA[-row_select, -col_exclude]
+
+suppressMessages(library(glmnet))
+
+cn <- colnames(source_train)
+exclude <- which(cn == "Severe_dyskaryosis" | cn == "CollectionYearRange")
+X <- as.matrix(source_train[ , -exclude])
+
+suppressWarnings(source_lasso <- cv.glmnet(X, source_train$Severe_dyskaryosis))
+coef(source_lasso)
+
+Y <- as.matrix(source_test[ , -exclude])
+suppressWarnings(source_predict <- predict(source_lasso, newx = Y))
+
+cor(source_predict, source_test$Severe_dyskaryosis) ^ 2
+source_errors <- source_test$Severe_dyskaryosis - source_predict
+sqrt(mean(source_errors ^ 2))  
+mean(abs(source_errors))
+  
+```
+
+For the lasso model, the independent variables acting as name tags for the data were removed so the model could be simplified and fitted to the best predictors. The goal of this model is to see if any variables within this data would be a good predictor of a severe dyskaryosis diagnosis. Looking at the R-squared of the lasso model, we see that the model explains 95.18% of the variability within the data which means the model is fitted very well to the data. However, looking at the RMSE and MAE, we see that the model is very lacking in its predictions. This can be because of the odd way the data is organized and collected.
+
+Some data within this dataset is taken across multiple year frames, while others are taken within the same year. The data also varies widely between the number of observations that are taken at each "location". The largely variability and inconsistency of the data could contribute to a high RMSE and MAE seen within the lasso model. 
+
+Because of the data, a portion of the data is singled out to be evaluated again. The data taken from 2012-2023 in England for all ages were subsetted into a new data frame, and the lasso model was ran again under these restrictions. 
+
+```{r}
+lasso_data <- severe_NA[severe_NA$CollectionYearRange == "2022-23" &
+                          suppressWarnings(severe_NA$Indicator == c(1:13)), ]
+row_select <- sample(1:nrow(lasso_data), nrow(lasso_data) / 2)
+col_exclude <- c(1:8, 17)
+
+source_train <- lasso_data[row_select, -col_exclude]
+source_test <- lasso_data[-row_select, -col_exclude]
+
+cn <- colnames(source_train)
+exclude <- which(cn == "Severe_dyskaryosis")
+X <- as.matrix(source_train[ , -exclude])
+
+suppressWarnings(source_lasso <- cv.glmnet(X, source_train$Severe_dyskaryosis))
+coef(source_lasso)
+
+Y <- as.matrix(source_test[ , -exclude])
+suppressWarnings(source_predict <- predict(source_lasso, newx = Y))
+
+cor(source_predict, source_test$Severe_dyskaryosis) ^ 2
+source_errors <- source_test$Severe_dyskaryosis - source_predict
+sqrt(mean(source_errors ^ 2))  
+mean(abs(source_errors))
+  
+```
+The R-squared, RMSE, and MAE have all improved from the previous model. However, since the data does have the quality of time attached to it, it may still be an issue in terms of predictions. This may explain the large RMSE and MAE values. 
 
