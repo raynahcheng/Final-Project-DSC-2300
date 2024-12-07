@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 # Abstract:
-
+The incidence of cervical cancer is a widespread problem that affects many women across the world. Additionally, this is one of the most easily preventable cancers through the use of different screening tests such as Pap smears and liquid-based cytology. Prediction of severity of cancer neoplasms is useful to determining the stage of cancer and can provide important information regarding treatments needed and incidence rates. Using data from the NHS in England, linear regressions, a BIC/MIC model, a LASSO model, and a parametric model were constructed as candidate models in order to predict various aspects of cervical cancer incidence and neoplasms. The final model chosen was the LASSO model, but all of the models provide a different aspect of clinical significance.
 
 # Introduction:
 
@@ -55,14 +55,12 @@ Using the new named indicators, each group was separated to be its own data fram
 source <- 
   read.csv("cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
 
-dim(source)
-
 #columns of interest: Indicator (age), Borderline changes, mild, moderate,
 #and severe dyskaryosis
 
 #only column that has NA's is severe dyskaryosis; sub in values for NA to clean
 source$Severe_dyskaryosis <- gsub("not included", NA, source$Severe_dyskaryosis)
-sum(is.na(source$Severe_dyskaryosis) == TRUE)
+#sum(is.na(source$Severe_dyskaryosis) == TRUE)
 
 uniq_ind <- unique(source$Indicator)
 for (i in 1:length(uniq_ind)){
