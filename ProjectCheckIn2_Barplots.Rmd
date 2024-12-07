@@ -270,7 +270,7 @@ From these bar graphs, we can observe that the general trend of diagnoses has de
 
 ```{r}
 row_select <- sample(1:nrow(severe_NA), nrow(severe_NA) / 2)
-col_exclude <- c(1:8, 17)
+col_exclude <- c(1:6, 8, 17)
 
 source_train <- severe_NA[row_select, -col_exclude]
 source_test <- severe_NA[-row_select, -col_exclude]
@@ -278,7 +278,7 @@ source_test <- severe_NA[-row_select, -col_exclude]
 suppressMessages(library(glmnet))
 
 cn <- colnames(source_train)
-exclude <- which(cn == "Severe_dyskaryosis" | cn == "CollectionYearRange")
+exclude <- which(cn == "Severe_dyskaryosis")
 X <- as.matrix(source_train[ , -exclude])
 
 suppressWarnings(source_lasso <- cv.glmnet(X, source_train$Severe_dyskaryosis))
@@ -304,7 +304,7 @@ Because of the data, a portion of the data is singled out to be evaluated again.
 lasso_data <- severe_NA[severe_NA$CollectionYearRange == "2022-23" &
                           suppressWarnings(severe_NA$Indicator == c(1:13)), ]
 row_select <- sample(1:nrow(lasso_data), nrow(lasso_data) / 2)
-col_exclude <- c(1:8, 17)
+col_exclude <- c(1:6, 8, 17)
 
 source_train <- lasso_data[row_select, -col_exclude]
 source_test <- lasso_data[-row_select, -col_exclude]
