@@ -92,13 +92,15 @@ abline(scaled_severe_model, col = 'blue')
 summary(scaled_severe_model)
 ```
 
+Borderline changes are defined by visual changes in the borders of the cancer neoplasm. In this dataset, the number of people who have presented with an abnormally shaped neoplasm are counted based on clinic site and age range and recorded in borderline changes. Dyskaryosis by definition is the abnormal appearance of a cell which is due to having an abnormal nucleus. The nucleus of the cell is where all the DNA is stored, so irregularities seen in the nucleus imply that there are issues with the DNA as well. DNA structural issues and chromosomal issues imply cancer, which is why dyskaryosis is tested for using pap smears and liquid cytology tests. In this dataset, the counts of mild, moderate, and severe dyskaryosis were all measured by clinic site and age range.
+
 For the first linear regression model of Mild Dyskaryosis vs Borderline Changes, the coefficient of the slope of the line was significant with an alpha level of <0.001. The intercept of the line was not significant at any level. The adjusted R-squared value is 0.758, indicating that 75.8% of the variance in the data can be explained by the model. The F statistic is large with a p-value < 0.05, indicating that this regression is significant.
 
-For the second linear regression model of Moderate Dyskaryosis vs Borderline Changes, the coefficient of the slope of the line was significant with an alpha level of <0.001. The intercept of the line was not significant at any level. The adjusted R-squared value is 0.7823, inidcating that 78.23% of the variance in the data can be explained by the model. The F statistic is large with a p-value < 0.05, indicating that this regression is significant.
+For the second linear regression model of Moderate Dyskaryosis vs Borderline Changes, the coefficient of the slope of the line was significant with an alpha level of <0.001. The intercept of the line was not significant at any level. The adjusted R-squared value is 0.7823, indicating that 78.23% of the variance in the data can be explained by the model. The F statistic is large with a p-value < 0.05, indicating that this regression is significant.
 
 For the third linear regression model of Severe Dyskaryosis vs Borderline Changes, the coefficient of the slope of the line was significant with an alpha level of <0.001. The intercept of the line was not significant at any level. The adjusted R-squared value is 0.8387, indicating that 83.87% of the variance in the data can be explained by the model. The F statistic is large with a p-value of < 0.05, indicating that this regression is significant.
 
-The regression model of Severe Dyskaryosis vs Borderline Changes appears to be the best at predicting incidence of severe dyskaryosis from borderline changes due to it having the largest F-statistic value (1244) as well as the largest adjusted R-squared value (0.8387). This could be because borderline changes in a neoplasma will typically be larger and more easily detectable in later stage cancers, meaning that large borderline changes would have a higher correlation with severe dyskaryosis.
+The regression model of Severe Dyskaryosis vs Borderline Changes appears to be the best at predicting incidence of severe dyskaryosis from borderline changes due to it having the largest F-statistic value (1244) as well as the largest adjusted R-squared value (0.8387). This could be because borderline changes in a neoplasma will typically be larger and more easily detectable in later stage cancers, meaning that large borderline changes would have a higher correlation with severe dyskaryosis. Therefore, it is reasonable to assume a relationship between a higher number of patients presenting with borderline changes as well as a larger number of patients presenting with severe dyskaryosis.
 
 ## BIC MIC Model Comparison:
 ```{r, echo = FALSE}
@@ -122,7 +124,7 @@ back_MIC <- step(train_model, direction = "backward",
 summary(back_MIC)
 ```
 
-The BIC model chooses all of the dyskaryosis variables, with equal about equal levels of significance. However, we can see that the moderate dyskaryosis t value is higher, at 15.163. For our BIC model, 95.16% of the variance can be explained by our model. The MIC model only chooses the moderate dyskaryosis variable, at a .001 level of signifiance, with a much higher t value than the BIC model. However, the variance that can be explained goes down a little bit, at 91.99%. 
+The BIC model chooses all variables: borderline changes, mild dyskaryosis, and moderate dyskaryosis, with about equal levels of significance. However, we can see that the moderate dyskaryosis t-value is higher, at 15.163. For our BIC model, 95.16% of the variance can be explained by our model. The MIC model only chooses the moderate dyskaryosis variable, at an alpha level of <.001, with a much higher t-value than the BIC model. However, the variance that can be explained by the model goes down with a value of 91.99%. 
 
 ```{r, include = FALSE}
 test_MIC <- predict(back_MIC, test_frame)
@@ -146,7 +148,9 @@ mean(abs(errors_BIC), na.rm = TRUE) #MAE for back_BIC
 |   MIC  |  .997  |  1128.59   |  248.29  |
 |   BIC  |  .996   |  806.2  |  194.54  |
 
-The BIC model has a lower R^2 value, but the errors are lower. The MIC model has a higher R^2 value, but the errors are higher. I think that we would pick the BIC model because the R^2 is not that much lower and it predicts our data a lot better.
+The BIC model has a lower R^2 value (.996), but the RMSE and MAE values are lower (806.2, 194.54). The MIC model has a higher R^2 value (.997), but the RMSE and MAE values are higher (1128.59, 248.29). Both models have a high RMSE value but low MAE value, which indicate that there are a few cases where the models performs poorly, such as when outliers are present in the data, inflating the RMSE value.
+
+Overall, the BIC model seems to be a candidate for a good model, however, because it selects all 3 variables, this model might not have reasonable clinical application in predicting severe dyskaryosis levels in cervical cancer. 
 
 ## Lasso Model:
 
