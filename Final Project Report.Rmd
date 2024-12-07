@@ -52,24 +52,31 @@ Using the new named indicators, each group was separated to be its own data fram
 # Exploratory Data Analysis
 
 ```{r, echo = FALSE}
-source <- read.csv("cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
+source <- 
+  read.csv("cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
 
+dim(source)
+
+#columns of interest: Indicator (age), Borderline changes, mild, moderate,
+#and severe dyskaryosis
+
+#only column that has NA's is severe dyskaryosis; sub in values for NA to clean
 source$Severe_dyskaryosis <- gsub("not included", NA, source$Severe_dyskaryosis)
+sum(is.na(source$Severe_dyskaryosis) == TRUE)
 
 uniq_ind <- unique(source$Indicator)
 for (i in 1:length(uniq_ind)){
   source$Indicator <- gsub(uniq_ind[i], i, source$Indicator)
 } 
 source$Indicator <- as.numeric(source$Indicator)
+#changing each age group to correspond with a number from 1-19. for example, <20 is 1
 
+#removing NAs and converting to numeric values
 severe_NA <- source[is.na(source$Severe_dyskaryosis) == FALSE, ]
 severe_NA$Severe_dyskaryosis <- as.numeric(severe_NA$Severe_dyskaryosis)
 
-for (i in 1:length(uniq_ind)){
-  df <- data.frame(source[source$Indicator == i, ])
-  df_name <- paste0("df", i)
-  assign(df_name, df)
-}
+comparison_data <- source[,c("Borderline_changes", "Mild_dyskaryosis", "Moderate_dyskaryosis","Severe_dyskaryosis")]
+comparison_data$Severe_dyskaryosis <- as.numeric(comparison_data$Severe_dyskaryosis)
 
 colfunc <- colorRampPalette(c("cadetblue2", "darkolivegreen3", "darkgreen"))
 age_color <- fields::color.scale(source$Indicator, col = colfunc(19))
@@ -405,7 +412,9 @@ coef(source_lasso)
 
 Y <- as.matrix(source_test[ , -exclude])
 suppressWarnings(source_predict <- predict(source_lasso, newx = Y))
+```
 
+```{r, include = FALSE}
 cor(source_predict, source_test$Severe_dyskaryosis) ^ 2
 source_errors <- source_test$Severe_dyskaryosis - source_predict
 sqrt(mean(source_errors ^ 2))  
@@ -413,7 +422,7 @@ mean(abs(source_errors))
   
 ```
 
-For the lasso model, the independent variables acting as name tags for the data were removed so the model could be simplified and fitted to the best predictors. The goal of this model is to see if any variables within this data would be a good predictor of a severe dyskaryosis diagnosis. Looking at the R-squared of the lasso model, we see that the model explains 95.18% of the variability within the data which means the model is fitted very well to the data. However, looking at the RMSE and MAE, we see that the model is very lacking in its predictions. This can be because of the odd way the data is organized and collected.
+For the first lasso model, the independent variables acting as name tags for the data were removed so the model could be simplified and fitted to the best predictors. The goal of this model is to see if any variables within this data would be a good predictor of a severe dyskaryosis diagnosis. Looking at the R-squared of the lasso model, we see that the model explains 93.9% of the variability within the data which means the model is fitted very well to the data. However, looking at the RMSE and MAE, we see that the model is very lacking in its predictions. This can be because of the odd way the data is organized and collected.
 
 Some data within this dataset is taken across multiple year frames, while others are taken within the same year. The data also varies widely between the number of observations that are taken at each "location". The largely variability and inconsistency of the data could contribute to a high RMSE and MAE seen within the lasso model. 
 
@@ -438,6 +447,9 @@ coef(source_lasso)
 Y <- as.matrix(source_test[ , -exclude])
 suppressWarnings(source_predict <- predict(source_lasso, newx = Y))
 
+```
+
+```{r, include = FALSE}
 cor(source_predict, source_test$Severe_dyskaryosis) ^ 2
 source_errors <- source_test$Severe_dyskaryosis - source_predict
 sqrt(mean(source_errors ^ 2))  
@@ -446,6 +458,11 @@ mean(abs(source_errors))
 ```
 
 The R-squared, RMSE, and MAE have all improved from the previous model. However, since the data does have the quality of time attached to it, it may still be an issue in terms of predictions. This may explain the large RMSE and MAE values. 
+
+| Model  | $R^2$ | RMSE | MAE | 
+|--------|-------|-------|--------|
+|   lasso 1  |  0.939  |  421.24   |  187.10  |
+|   lasso 2  |  0.970  |  46.52   |  29.34  |
 
 
 ## Chosen Model:
@@ -566,7 +583,7 @@ mean(abs(errors_BIC), na.rm = TRUE) #MAE for back_BIC
 
 ```{r}
 row_select <- sample(1:nrow(severe_NA), nrow(severe_NA) / 2)
-col_exclude <- c(1:8, 17)
+col_exclude <- c(1:6, 8, 17)
 
 source_train <- severe_NA[row_select, -col_exclude]
 source_test <- severe_NA[-row_select, -col_exclude]
@@ -594,7 +611,7 @@ mean(abs(source_errors))
 lasso_data <- severe_NA[severe_NA$CollectionYearRange == "2022-23" &
                           suppressWarnings(severe_NA$Indicator == c(1:13)), ]
 row_select <- sample(1:nrow(lasso_data), nrow(lasso_data) / 2)
-col_exclude <- c(1:8, 17)
+col_exclude <- c(1:6, 8, 17)
 
 source_train <- lasso_data[row_select, -col_exclude]
 source_test <- lasso_data[-row_select, -col_exclude]
