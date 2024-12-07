@@ -6,7 +6,7 @@ output: pdf_document
 ---
 ```{r, include=FALSE}
 source <- 
-  read.csv("kc61_sample_result_age_source.csv")
+  read.csv("cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
 
 dim(source)
 
@@ -45,7 +45,7 @@ train_frame <- comparison_data[train_index,]
 test_frame <- comparison_data[test_index,]
 
 
-train_model <- lm(Borderline_changes ~ ., data = train_frame)
+train_model <- lm(Severe_dyskaryosis ~ ., data = train_frame)
 summary(train_model)
 
 back_BIC <- step(train_model, direction = "backward", 
@@ -56,17 +56,17 @@ back_MIC <- step(train_model, direction = "backward",
                  k = nrow(train_frame), trace = 0)
 summary(back_MIC)
 ```
-The BIC model chooses all of the dyskaryosis variables, with equal about equal levels of significance. However, we can see that the severe dyskaryosis t value is higher, at 8.748, compared to the others at around 4.5. For our BIC model, 81.12% of the variance can be explained by our model. The MIC model only chooses the severe dyskaryosis variable, at a .001 level of signifiance, with a much higher t value than the BIC model. However, the variance that can be explained goes down a little bit, at 78.69%. 
+The BIC model chooses all of the dyskaryosis variables, with equal about equal levels of significance. However, we can see that the moderate dyskaryosis t value is higher, at 15.163. For our BIC model, 95.16% of the variance can be explained by our model. The MIC model only chooses the moderate dyskaryosis variable, at a .001 level of signifiance, with a much higher t value than the BIC model. However, the variance that can be explained goes down a little bit, at 91.99%. 
 
 ```{r}
 test_MIC <- predict(back_MIC, test_frame)
 test_BIC <- predict(back_BIC, test_frame)
 
-cor(test_MIC, test_frame$Borderline_changes, use = "complete.obs")^2 #r-squared for back_MIC model
-cor(test_BIC, test_frame$Borderline_changes, use = "complete.obs")^2 #r-squared for back_BIC model
+cor(test_MIC, test_frame$Severe_dyskaryosis, use = "complete.obs")^2 #r-squared for back_MIC model
+cor(test_BIC, test_frame$Severe_dyskaryosis, use = "complete.obs")^2 #r-squared for back_BIC model
 
-errors_MIC <- test_frame$Borderline_changes - test_MIC
-errors_BIC <- test_frame$Borderline_changes- test_BIC
+errors_MIC <- test_frame$Severe_dyskaryosis - test_MIC
+errors_BIC <- test_frame$Severe_dyskaryosis - test_BIC
 
 sqrt(mean(errors_MIC^2, na.rm = TRUE)) #RMSE for back_MIC
 sqrt(mean(errors_BIC^2, na.rm = TRUE)) #RMSE for back_BIC
@@ -76,7 +76,7 @@ mean(abs(errors_BIC), na.rm = TRUE) #MAE for back_BIC
 ```
 | Model  | $R^2$ | RMSE | MAE | 
 |--------|-------|-------|--------|
-|   MIC  |  .997  |  1763.82   |  1286.17  |
-|   BIC  |  .991   |  1650.03  |  1056.62  |
+|   MIC  |  .997  |  1128.59   |  248.29  |
+|   BIC  |  .996   |  806.2  |  194.54  |
 
 The BIC model has a lower R^2 value, but the errors are lower. The MIC model has a higher R^2 value, but the errors are higher. I think that we would pick the BIC model because the R^2 is not that much lower and it predicts our data a lot better.
