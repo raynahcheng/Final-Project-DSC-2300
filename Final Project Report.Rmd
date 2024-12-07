@@ -20,7 +20,240 @@ Cervical cancer is a type of cancer that occurs in the cervix, specifically the 
 
 # Data Cleaning:
 
-# Exploratory Data Analysis:
+The dataset for Cervical Screening Program was taken from the NHS England, published on November 23, 2023 and covers the national screening data as well as local and clinical commissioned data. Out of the documents that were provided by the NHS, the data frame including the ages and results of diagnoses was selected for this project (`kc61_sample_result_age_Source.csv`). This set of data includes the information that was of most interest, including age and severity of diagnosis. 
+
+The initial data frame had 330 observations for 17 variables, and the interested variables were recorded in a multitude of fashions. The `Indicator` variable was recorded as characters for age ranges. The severity of the diagnosis (`Borderline Changes`, `Mild Dyskaryosis`, `Moderate Dyskaryosis`, and `Severe Dyskaryosis`) were recorded as numeric variables, explaining the number of diagnoses that were observed for each age range, and ome variables had missing values recorded as "not included". 
+
+In order to properly use the data, the "not included" observations were replaced with `NA` values and then removed from the data frame. The `Indicator` variable was then renamed to be a number from 1 through 19. Each number corresponds to a specific age range or  source of sample. 
+
+- 1: <20 years old (non-inclusive)
+- 2: 20-24 years old (inclusive)
+- 3: 25-29 years old (inclusive)
+- 4: 30-34 years old (inclusive)
+- 5: 35-39 years old (inclusive)
+- 6: 40-44 years old (inclusive)
+- 7: 45-49 years old (inclusive)
+- 8: 50-54 years old (inclusive)
+- 9: 55-59 years old (inclusive)
+- 10: 60-64 years old (inclusive)
+- 11: 65-69 years old (inclusive)
+- 12: 70-74 years old (inclusive)
+- 13: >=75 years old (inclusive)
+- 14: data taken from GP (General Practitioners)
+- 15: data taken from NHSCC (NHS Clinical Commissioners)
+- 16: data taken from GUM (Genitourinary Medicine)
+- 17: data taken from NHS Hospital
+- 18: data taken from Private sources
+- 19: data taken from Other sources
+
+Using the new named indicators, each group was separated to be its own data frame. This concluded the general data cleaning, data was further cleaned for the purpose of running plots and models.
+
+
+# Exploratory Data Analysis
+
+```{r, echo = FALSE}
+source <- read.csv("cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
+
+source$Severe_dyskaryosis <- gsub("not included", NA, source$Severe_dyskaryosis)
+
+uniq_ind <- unique(source$Indicator)
+for (i in 1:length(uniq_ind)){
+  source$Indicator <- gsub(uniq_ind[i], i, source$Indicator)
+} 
+source$Indicator <- as.numeric(source$Indicator)
+
+severe_NA <- source[is.na(source$Severe_dyskaryosis) == FALSE, ]
+severe_NA$Severe_dyskaryosis <- as.numeric(severe_NA$Severe_dyskaryosis)
+
+for (i in 1:length(uniq_ind)){
+  df <- data.frame(source[source$Indicator == i, ])
+  df_name <- paste0("df", i)
+  assign(df_name, df)
+}
+
+colfunc <- colorRampPalette(c("cadetblue2", "darkolivegreen3", "darkgreen"))
+age_color <- fields::color.scale(source$Indicator, col = colfunc(19))
+
+par(mfrow = c(1, 3))
+plot(source$Borderline_changes, source$Mild_dyskaryosis, col = age_color, 
+     pch = 19, xlab = "Borderline Changes", ylab = "Mild Dyskaryosis")
+legend("topleft", legend = uniq_ind, pch = 19, col = colfunc(19), cex = .6)
+
+plot(source$Borderline_changes, source$Moderate_dyskaryosis, col = age_color, 
+     pch = 19, xlab = "Borderline Changes", ylab = "Moderate Dyskaryosis")
+legend("topleft", legend = uniq_ind, pch = 19, col = colfunc(19), cex = .6)
+
+plot(source$Borderline_changes, source$Severe_dyskaryosis, col = age_color, 
+     pch = 19, xlab = "Borderline Changes", ylab = "Severe Dyskaryosis")
+legend("topleft", legend = uniq_ind, pch = 19, ncol = 2, col = colfunc(19), cex = .6)
+
+mtext("Comparison of Borderline Changes vs. Mild/Moderate/Severe Dyskaryosis 
+      (colored by age)", outer = TRUE, cex = 1, line = -3)
+
+```
+
+The inital scatterplots were made to observe any correlations between the number of borderline changes and the mild, moderate, or severe dyskariosis changes. The plot was organized by the indicator, sorting the different age groups and data sources. Looking at this scatterplot, the bulk of the data is clustered around the lower left corner of the graph, having a general positive trend. There looks to be one outlier at the upper right corner of the graph. The weird distribution of the data prompted the dataset to be reexamined and the observations taken from the separate data sources showed to be throwing off the data. Because there isn't consistency or details about how the data was recorded at each of these individual sources, those variables were taken out. 
+
+```{r, echo = FALSE}
+source_age <- source[source$Indicator < 14, ]
+uniq_ind_age <- uniq_ind[-14:-19]
+
+colfunc <- colorRampPalette(c("cadetblue2", "darkolivegreen3", "darkgreen"))
+age_color <- fields::color.scale(uniq_ind_age, col = colfunc(13))
+
+par(mfrow = c(1, 3))
+plot(source_age$Borderline_changes, source_age$Mild_dyskaryosis, col = age_color, 
+     pch = 19, xlab = "Borderline Changes", ylab = "Mild Dyskaryosis")
+legend("topleft", legend = uniq_ind_age, pch = 19, col = colfunc(13), cex = .6)
+
+plot(source_age$Borderline_changes, source_age$Moderate_dyskaryosis, col = age_color, 
+     pch = 19, xlab = "Borderline Changes", ylab = "Moderate Dyskaryosis")
+legend("topleft", legend = uniq_ind_age, pch = 19, col = colfunc(13), cex = .6)
+
+plot(source_age$Borderline_changes, source_age$Severe_dyskaryosis, col = age_color, 
+     pch = 19, xlab = "Borderline Changes", ylab = "Severe Dyskaryosis")
+legend("topleft", legend = uniq_ind_age, pch = 19, ncol = 2, col = colfunc(13), cex = .6)
+
+mtext("Comparison of Borderline Changes vs. Mild/Moderate/Severe Dyskaryosis 
+      (colored by age)", outer = TRUE, cex = 1, line = -3)
+
+```
+
+This scatterplot gives a better idea of how the data changing for each age group, however it is still difficult to visualize the difference between each variable group. The data was once again reexamined to see if there were any confounding variables that caused the distribution of the data. Looking back at the data, it was discovered that the information was separated between national, regional, and private data. National data contained information of data taken between 2012-2023, while regional and private data were taken only from 2022-2023. The descrepancies in the timeframe the data was collected promted to change vizualization of the data to bar plots, looking only at the National data with specific timeframes. 
+
+```{r, echo = FALSE}
+suppressMessages(library(viridisLite))
+suppressMessages(library(viridis))
+suppressMessages(library(fields))
+
+diagnosis_color <- color.scale(1:6, viridis(6))
+diagnosis_col <- which(colnames(severe_NA) == "Inadequate" |
+                         colnames(severe_NA) == "Negative" |
+                         colnames(severe_NA) == "Borderline_changes" |
+                         colnames(severe_NA) == "Mild_dyskaryosis" |
+                         colnames(severe_NA) == "Moderate_dyskaryosis" | 
+                         colnames(severe_NA) == "Severe_dyskaryosis")
+
+par(mfrow = c(1,2), oma = c(0, 0, 2, 0))
+for (i in 1:2) {
+  y <- c("2012-13", "2015-16", "2018-19", "2022-23")
+  df <- which(severe_NA$CollectionYearRange == y[i] & 
+                severe_NA$Org_Name == "England" &
+                suppressWarnings(severe_NA$Indicator == c(1:13)))
+  plot <- severe_NA[df, diagnosis_col]
+  plot <- t(plot)
+  rownames(plot) <- c("Inadequate", "Negative", 
+                    "Borderline", "Mild",
+                    "Moderate", "Severe")
+  colnames(plot) <- c("<20", "20-24", "25-29", "30-34", "35-39", 
+                      "40-44", "45-49", "50-54", "55-59", "60-64", 
+                      "65-69", "70-74", ">=75")
+  plot_title <- c("2012-2013", "2015-2016", "2018-2019", "2022-2023")
+  plot <- as.matrix(plot)
+  
+  barplot(plot,
+        col = diagnosis_color,
+        legend.text = row.names(plot),
+        args.legend = list(x = "topright", cex = 0.7, bty = "n"),
+        main = plot_title[i],
+        xlab = "Age Groups (years)",
+        ylab = "Diagnoses Count")
+}
+mtext("Cervical Screening Distribution (England)", side = 3, outer = TRUE, font = 2)
+```
+
+```{r, echo = FALSE}
+par(mfrow = c(1,2), oma = c(0, 0, 2, 0))
+for (i in 3:4) {
+  y <- c("2012-13", "2015-16", "2018-19", "2022-23")
+  df <- which(severe_NA$CollectionYearRange == y[i] & 
+                severe_NA$Org_Name == "England" &
+                suppressWarnings(severe_NA$Indicator == c(1:13)))
+  plot <- severe_NA[df, diagnosis_col]
+  plot <- t(plot)
+  rownames(plot) <- c("Inadequate", "Negative", 
+                    "Borderline", "Mild",
+                    "Moderate", "Severe")
+  colnames(plot) <- c("<20", "20-24", "25-29", "30-34", "35-39", 
+                      "40-44", "45-49", "50-54", "55-59", "60-64", 
+                      "65-69", "70-74", ">=75")
+  plot_title <- c("2012-2013", "2015-2016", "2018-2019", "2022-2023")
+  plot <- as.matrix(plot)
+  
+  barplot(plot,
+        col = diagnosis_color,
+        legend.text = row.names(plot),
+        args.legend = list(x = "topright", cex = 0.7, bty = "n"),
+        main = plot_title[i],
+        xlab = "Age Groups (years)",
+        ylab = "Diagnoses Count")
+}
+mtext("Cervical Screening Distribution (England)", side = 3, outer = TRUE, font = 2)
+
+```
+
+```{r, echo = FALSE}
+par(mfrow = c(1,2), oma = c(0 , 0, 2, 0))
+for (i in 1:2) {
+  y <- c("2012-13", "2015-16", "2018-19", "2022-23")
+  df <- which(severe_NA$CollectionYearRange == y[i] & 
+                severe_NA$Org_Name == "England" &
+                suppressWarnings(severe_NA$Indicator == c(1:13)))
+  df <- which(severe_NA$CollectionYearRange == y[i])
+  plot <- severe_NA[df, diagnosis_col]
+  plot <- t(plot)
+  rownames(plot) <- c("Inadequate", "Negative", 
+                    "Borderline", "Mild",
+                    "Moderate", "Severe")
+  colnames(plot) <- c("<20", "20-24", "25-29", "30-34", "35-39", 
+                      "40-44", "45-49", "50-54", "55-59", "60-64", 
+                      "65-69", "70-74", ">=75")
+  plot_title <- c("2012-2013", "2015-2016", "2018-2019", "2022-2023")
+  plot <- as.matrix(plot)
+  plot_2 <- plot[-(1:2), ]
+  
+  barplot(plot_2,
+        col = diagnosis_color[c(3:6)],
+        legend.text = row.names(plot_2),
+        args.legend = list(x = "topright", cex = 0.7, bty = "n"),
+        main = plot_title[i],
+        xlab = "Age Groups (years)",
+        ylab = "Diagnoses Count")
+}
+mtext("Diagnoses Result Distribution (England)", side = 3, outer = TRUE, font = 2)
+```
+
+```{r, echo = FALSE}
+par(mfrow = c(1,2), oma = c(0 , 0, 2, 0))
+for (i in 3:4) {
+  y <- c("2012-13", "2015-16", "2018-19", "2022-23")
+  df <- which(severe_NA$CollectionYearRange == y[i] & 
+                severe_NA$Org_Name == "England" &
+                suppressWarnings(severe_NA$Indicator == c(1:13)))
+  plot <- severe_NA[df, diagnosis_col]
+  plot <- t(plot)
+  rownames(plot) <- c("Inadequate", "Negative", 
+                    "Borderline", "Mild",
+                    "Moderate", "Severe")
+  colnames(plot) <- c("<20", "20-24", "25-29", "30-34", "35-39", 
+                      "40-44", "45-49", "50-54", "55-59", "60-64", 
+                      "65-69", "70-74", ">=75")
+  plot_title <- c("2012-2013", "2015-2016", "2018-2019", "2022-2023")
+  plot <- as.matrix(plot)
+  plot_2 <- plot[-(1:2), ]
+  
+  barplot(plot_2,
+        col = diagnosis_color[c(3:6)],
+        legend.text = row.names(plot_2),
+        args.legend = list(x = "topright", cex = 0.7, bty = "n"),
+        main = plot_title[i],
+        xlab = "Age Groups (years)",
+        ylab = "Diagnoses Count")
+}
+mtext("Diagnoses Result Distribution (England)", side = 3, outer = TRUE, font = 2)
+```
+
+From these bar graphs, we can observe that the general trend of diagnoses has decreased throughout the years. This means that there is an absolute decrease in the amount of patients that are diagnosed for any type of cervical tissue changes. We also see that the number of diagnoses for severe dyskaryosis has decreased as well. This change could be explained by the increasing administration of the HPV vaccine.
 
 
 # Results: 
