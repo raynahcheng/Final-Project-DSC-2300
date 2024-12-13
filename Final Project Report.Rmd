@@ -1,7 +1,7 @@
 ---
 title: "Final Project Report"
-author: "Raynah Cheng"
-date: "2024-12-07"
+author: "Raynah Cheng, Anika Dachiraju, Jonathan Thomas, Paulina Yao"
+date: "2024-12-14"
 output: pdf_document
 ---
 
@@ -11,18 +11,49 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 # Abstract:
-The incidence of cervical cancer is a widespread problem that affects many women across the world. Additionally, this is one of the most easily preventable cancers through the use of different screening tests such as Pap smears and liquid-based cytology. Prediction of severity of cancer neoplasms is useful to determining the stage of cancer and can provide important information regarding treatments needed and incidence rates. Using data from the NHS in England, linear regressions, a BIC/MIC model, a LASSO model, and a parametric model were constructed as candidate models in order to predict various aspects of cervical cancer incidence and neoplasms. The final model chosen was the LASSO model, but all of the models provide a different aspect of clinical significance.
+
+The incidence of cervical cancer is a widespread problem that affects many women across the world. Additionally, this is one of the most easily preventable cancers through the use of different screening tests such as Pap smears and liquid-based cytology. Prediction of severity of cancer neoplasms is useful to determining the stage of cancer and can provide important information regarding treatments needed and incidence rates. Using data from the NHS in England, a linear regressions, BIC/MIC model, LASSO model, and parametric model were constructed as candidate models in order to predict various aspects of cervical cancer incidence and neoplasms. The final model chosen was the LASSO model, but all of the models provide a different aspect of clinical significance.
 
 # Introduction:
 
-Cervical cancer is a type of cancer that occurs in the cervix, specifically the cells lining the cervix wall. It is the fourth most common cancer in women globally with around 660,000 new cases and 350,000 deaths in 2022, according to the WHO. Our project contains data on patients that have cervical cancer, taken from the NHS England. There were many datasets, but the one that we focused on was titled k61_sample_result_age_source. In this dataset, there are 330 observations, with 5 variables of focus. We chose on this one because it contained data on cervical cancer changes based on age and screening. The relevant variables we are looking at are mild, moderate, and severe dyskaryosis, age, and borderline changes. These terms are broad and hard to understand, so defining them is useful. Dyskaryosis is the change in appearance of cells that line the cervix. Mild, moderate, and severe are the classifications that this dataset uses. Mild is little change, moderate is moderate change, and severe is severe change. These changes are defined based on a 3-year screening. Borderline changes are abnormal changes in the cervix that are often pre-cancerous. These could indicate cervical cancer. 
+Cervical cancer is a type of cancer that occurs in the cervix, specifically the cells lining the cervix wall. It is the fourth most common cancer in women globally with around 660,000 new cases and 350,000 deaths in 2022, according to the WHO (). Our project contains data on patients that have cervical cancer, taken from the NHS England. There were many datasets, but the one that we focused on was titled k61_sample_result_age_source. In this dataset, there are 330 observations, with 5 variables of focus. We chose this dataset because it contained data on cervical cancer changes based on age and screening. The relevant variables we are looking at are mild, moderate, and severe dyskaryosis, age, and borderline changes. These terms are broad and hard to understand, so defining them is useful. Dyskaryosis is the change in appearance of cells that line the cervix. Mild, moderate, and severe are the classifications that this dataset uses. Mild is little change, moderate is moderate change, and severe is severe change. These changes are defined based on a 3-year screening. Borderline changes are abnormal changes in the cervix that are often pre-cancerous. These could indicate cervical cancer. 
 
+\pagebreak
 
 # Data Cleaning:
 
+```{r, include = FALSE}
+source <- 
+  read.csv("cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
+
+dim(source)
+
+#columns of interest: Indicator (age), Borderline changes, mild, moderate,
+#and severe dyskaryosis
+
+#only column that has NA's is severe dyskaryosis; sub in values for NA to clean
+source$Severe_dyskaryosis <- gsub("not included", NA, source$Severe_dyskaryosis)
+sum(is.na(source$Severe_dyskaryosis) == TRUE)
+
+uniq_ind <- unique(source$Indicator)
+for (i in 1:length(uniq_ind)){
+  source$Indicator <- gsub(uniq_ind[i], i, source$Indicator)
+} 
+source$Indicator <- as.numeric(source$Indicator)
+#changing each age group to correspond with a number from 1-19. for example, <20 is 1
+
+#removing NAs and converting to numeric values
+severe_NA <- source[is.na(source$Severe_dyskaryosis) == FALSE, ]
+severe_NA$Severe_dyskaryosis <- as.numeric(severe_NA$Severe_dyskaryosis)
+
+comparison_data <- source[,c("Borderline_changes", "Mild_dyskaryosis", "Moderate_dyskaryosis","Severe_dyskaryosis")]
+comparison_data$Severe_dyskaryosis <- as.numeric(comparison_data$Severe_dyskaryosis)
+pairs(comparison_data)
+```
+
 The dataset for Cervical Screening Program was taken from the NHS England, published on November 23, 2023 and covers the national screening data as well as local and clinical commissioned data. Out of the documents that were provided by the NHS, the data frame including the ages and results of diagnoses was selected for this project (`kc61_sample_result_age_Source.csv`). This set of data includes the information that was of most interest, including age and severity of diagnosis. 
 
-The initial data frame had 330 observations for 17 variables, and the interested variables were recorded in a multitude of fashions. The `Indicator` variable was recorded as characters for age ranges. The severity of the diagnosis (`Borderline Changes`, `Mild Dyskaryosis`, `Moderate Dyskaryosis`, and `Severe Dyskaryosis`) were recorded as numeric variables, explaining the number of diagnoses that were observed for each age range, and ome variables had missing values recorded as "not included". 
+The initial data frame had 330 observations for 17 variables, and the interested variables were recorded in a multitude of fashions. The `Indicator` variable was recorded as characters for age ranges. The severity of the diagnosis (`Borderline Changes`, `Mild Dyskaryosis`, `Moderate Dyskaryosis`, and `Severe Dyskaryosis`) were recorded as numeric variables, explaining the number of diagnoses that were observed for each age range, and some variables had missing values recorded as "not included". 
 
 In order to properly use the data, the "not included" observations were replaced with `NA` values and then removed from the data frame. The `Indicator` variable was then renamed to be a number from 1 through 19. Each number corresponds to a specific age range or  source of sample. 
 
@@ -48,34 +79,9 @@ In order to properly use the data, the "not included" observations were replaced
 
 Using the new named indicators, each group was separated to be its own data frame. This concluded the general data cleaning, data was further cleaned for the purpose of running plots and models.
 
-
 # Exploratory Data Analysis
 
 ```{r, echo = FALSE}
-source <- 
-  read.csv("cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
-
-#columns of interest: Indicator (age), Borderline changes, mild, moderate,
-#and severe dyskaryosis
-
-#only column that has NA's is severe dyskaryosis; sub in values for NA to clean
-source$Severe_dyskaryosis <- gsub("not included", NA, source$Severe_dyskaryosis)
-#sum(is.na(source$Severe_dyskaryosis) == TRUE)
-
-uniq_ind <- unique(source$Indicator)
-for (i in 1:length(uniq_ind)){
-  source$Indicator <- gsub(uniq_ind[i], i, source$Indicator)
-} 
-source$Indicator <- as.numeric(source$Indicator)
-#changing each age group to correspond with a number from 1-19. for example, <20 is 1
-
-#removing NAs and converting to numeric values
-severe_NA <- source[is.na(source$Severe_dyskaryosis) == FALSE, ]
-severe_NA$Severe_dyskaryosis <- as.numeric(severe_NA$Severe_dyskaryosis)
-
-comparison_data <- source[,c("Borderline_changes", "Mild_dyskaryosis", "Moderate_dyskaryosis","Severe_dyskaryosis")]
-comparison_data$Severe_dyskaryosis <- as.numeric(comparison_data$Severe_dyskaryosis)
-
 colfunc <- colorRampPalette(c("cadetblue2", "darkolivegreen3", "darkgreen"))
 age_color <- fields::color.scale(source$Indicator, col = colfunc(19))
 
@@ -93,11 +99,11 @@ plot(source$Borderline_changes, source$Severe_dyskaryosis, col = age_color,
 legend("topleft", legend = uniq_ind, pch = 19, ncol = 2, col = colfunc(19), cex = .6)
 
 mtext("Comparison of Borderline Changes vs. Mild/Moderate/Severe Dyskaryosis 
-      (colored by age)", outer = TRUE, cex = 1, line = -3)
+      (colored by age/private source)", outer = TRUE, cex = 1, line = -3)
 
 ```
 
-The inital scatterplots were made to observe any correlations between the number of borderline changes and the mild, moderate, or severe dyskariosis changes. The plot was organized by the indicator, sorting the different age groups and data sources. Looking at this scatterplot, the bulk of the data is clustered around the lower left corner of the graph, having a general positive trend. There looks to be one outlier at the upper right corner of the graph. The weird distribution of the data prompted the dataset to be reexamined and the observations taken from the separate data sources showed to be throwing off the data. Because there isn't consistency or details about how the data was recorded at each of these individual sources, those variables were taken out. 
+The inital scatterplots were made to observe any correlations between the number of borderline changes and the mild, moderate, or severe dyskariosis changes. The plot was organized by the indicator, sorting the different age groups and data sources. Looking at this scatterplot, the bulk of the data is clustered around the lower left corner of the graph, having a general positive trend. There looks to be one outlier at the upper right corner of the graph. The weird distribution of the data prompted the dataset to be reexamined and the observations outside of the specified age ranges showed to be throwing off the data. Because there isn't consistency or details about how the data was recorded at each of these individual sources, those variables were taken out. 
 
 ```{r, echo = FALSE}
 source_age <- source[source$Indicator < 14, ]
@@ -124,7 +130,12 @@ mtext("Comparison of Borderline Changes vs. Mild/Moderate/Severe Dyskaryosis
 
 ```
 
-This scatterplot gives a better idea of how the data changing for each age group, however it is still difficult to visualize the difference between each variable group. The data was once again reexamined to see if there were any confounding variables that caused the distribution of the data. Looking back at the data, it was discovered that the information was separated between national, regional, and private data. National data contained information of data taken between 2012-2023, while regional and private data were taken only from 2022-2023. The descrepancies in the timeframe the data was collected promted to change vizualization of the data to bar plots, looking only at the National data with specific timeframes. 
+This scatterplot gives a better idea of how the data changing for each age group, however, it is still difficult to visualize the difference between each variable group. The data was once again reexamined to see if there were any confounding variables that caused the distribution of the data. Looking back at the data, it was discovered that the information was separated between national, regional, and private data. National data contained information of data taken between 2012-2023, while regional and private data were taken only from 2022-2023. The discrepancies in the timeframe the data was collected promted to change vizualization of the data to bar plots, looking only at the National data with specified timeframes. 
+
+From the bar graphs below, we can observe that the general trend of diagnoses has decreased throughout the years. This means that there is an absolute decrease in the amount of patients that are diagnosed for any type of cervical tissue changes. We also see that the number of diagnoses for severe dyskaryosis has decreased as well. This change could be explained by the increasing administration of the HPV vaccine.
+
+The graphs are able to visualize the trends of diagnoses throughout the years, however, taking it a step further, we ran different models to see if any factors could be a good predictor of severe cervical tissue changes
+
 
 ```{r, echo = FALSE}
 suppressMessages(library(viridisLite))
@@ -164,7 +175,7 @@ for (i in 1:2) {
         xlab = "Age Groups (years)",
         ylab = "Diagnoses Count")
 }
-mtext("Cervical Screening Distribution (England)", side = 3, outer = TRUE, font = 2)
+mtext("Cervical Screening Distribution (England)", side = 3, outer = TRUE, font = 2, cex = 1.2)
 ```
 
 ```{r, echo = FALSE}
@@ -193,7 +204,6 @@ for (i in 3:4) {
         xlab = "Age Groups (years)",
         ylab = "Diagnoses Count")
 }
-mtext("Cervical Screening Distribution (England)", side = 3, outer = TRUE, font = 2)
 
 ```
 
@@ -225,7 +235,7 @@ for (i in 1:2) {
         xlab = "Age Groups (years)",
         ylab = "Diagnoses Count")
 }
-mtext("Diagnoses Result Distribution (England)", side = 3, outer = TRUE, font = 2)
+mtext("Diagnoses Result Distribution (England)", side = 3, outer = TRUE, font = 2, cex = 1.2)
 ```
 
 ```{r, echo = FALSE}
@@ -255,50 +265,13 @@ for (i in 3:4) {
         xlab = "Age Groups (years)",
         ylab = "Diagnoses Count")
 }
-mtext("Diagnoses Result Distribution (England)", side = 3, outer = TRUE, font = 2)
+
 ```
-
-From these bar graphs, we can observe that the general trend of diagnoses has decreased throughout the years. This means that there is an absolute decrease in the amount of patients that are diagnosed for any type of cervical tissue changes. We also see that the number of diagnoses for severe dyskaryosis has decreased as well. This change could be explained by the increasing administration of the HPV vaccine.
-
 
 # Results: 
-```{r, include = FALSE}
-source <- 
-  read.csv("cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
-
-dim(source)
-
-#columns of interest: Indicator (age), Borderline changes, mild, moderate,
-#and severe dyskaryosis
-
-#only column that has NA's is severe dyskaryosis; sub in values for NA to clean
-source$Severe_dyskaryosis <- gsub("not included", NA, source$Severe_dyskaryosis)
-sum(is.na(source$Severe_dyskaryosis) == TRUE)
-
-uniq_ind <- unique(source$Indicator)
-for (i in 1:length(uniq_ind)){
-  source$Indicator <- gsub(uniq_ind[i], i, source$Indicator)
-} 
-source$Indicator <- as.numeric(source$Indicator)
-#changing each age group to correspond with a number from 1-19. for example, <20 is 1
-
-#removing NAs and converting to numeric values
-severe_NA <- source[is.na(source$Severe_dyskaryosis) == FALSE, ]
-severe_NA$Severe_dyskaryosis <- as.numeric(severe_NA$Severe_dyskaryosis)
-
-comparison_data <- source[,c("Borderline_changes", "Mild_dyskaryosis", "Moderate_dyskaryosis","Severe_dyskaryosis")]
-comparison_data$Severe_dyskaryosis <- as.numeric(comparison_data$Severe_dyskaryosis)
-```
-```{r, include = FALSE}
-## Subset source data for only borderline changes and mild, moderate, severe dyskaryosis
-
-comparison_data <- source[,c("Borderline_changes", "Mild_dyskaryosis", "Moderate_dyskaryosis","Severe_dyskaryosis")]
-comparison_data$Severe_dyskaryosis <- as.numeric(comparison_data$Severe_dyskaryosis)
-
-pairs(comparison_data)
-```
 
 ## Scaled Linear Regression:
+
 ```{r, echo = FALSE}
 scaled_data <- as.data.frame(scale(comparison_data))
 
@@ -330,6 +303,8 @@ abline(scaled_severe_model, col = 'blue')
 summary(scaled_severe_model)
 ```
 
+\pagebreak
+
 Borderline changes are defined by visual changes in the borders of the cancer neoplasm. In this dataset, the number of people who have presented with an abnormally shaped neoplasm are counted based on clinic site and age range and recorded in borderline changes. Dyskaryosis by definition is the abnormal appearance of a cell which is due to having an abnormal nucleus. The nucleus of the cell is where all the DNA is stored, so irregularities seen in the nucleus imply that there are issues with the DNA as well. DNA structural issues and chromosomal issues imply cancer, which is why dyskaryosis is tested for using pap smears and liquid cytology tests. In this dataset, the counts of mild, moderate, and severe dyskaryosis were all measured by clinic site and age range.
 
 For the first linear regression model of Mild Dyskaryosis vs Borderline Changes, the coefficient of the slope of the line was significant with an alpha level of <0.001. The intercept of the line was not significant at any level. The adjusted R-squared value is 0.758, indicating that 75.8% of the variance in the data can be explained by the model. The F statistic is large with a p-value < 0.05, indicating that this regression is significant.
@@ -340,8 +315,11 @@ For the third linear regression model of Severe Dyskaryosis vs Borderline Change
 
 The regression model of Severe Dyskaryosis vs Borderline Changes appears to be the best at predicting incidence of severe dyskaryosis from borderline changes due to it having the largest F-statistic value (1244) as well as the largest adjusted R-squared value (0.8387). This could be because borderline changes in a neoplasma will typically be larger and more easily detectable in later stage cancers, meaning that large borderline changes would have a higher correlation with severe dyskaryosis. Therefore, it is reasonable to assume a relationship between a higher number of patients presenting with borderline changes as well as a larger number of patients presenting with severe dyskaryosis.
 
+\pagebreak
+
 ## BIC MIC Model Comparison:
-```{r, echo = FALSE}
+
+```{r, echo = FALSE, include  = FALSE}
 #splitting data into test and train
 train_index <- 1:165
 test_index <- 166:nrow(comparison_data)
@@ -349,14 +327,23 @@ test_index <- 166:nrow(comparison_data)
 train_frame <- comparison_data[train_index,]
 test_frame <- comparison_data[test_index,]
 
-
 train_model <- lm(Severe_dyskaryosis ~ ., data = train_frame)
 summary(train_model)
 
+```
+
+#### Back BIC Model
+
+```{r, echo = FALSE}
 back_BIC <- step(train_model, direction = "backward", 
                  k = log(nrow(train_frame)), trace = 0)
 summary(back_BIC)
 
+```
+
+#### Back MIC Model
+
+```{r, echo = FALSE}
 back_MIC <- step(train_model, direction = "backward", 
                  k = nrow(train_frame), trace = 0)
 summary(back_MIC)
@@ -392,6 +379,7 @@ Overall, the BIC model seems to be a candidate for a good model, however, becaus
 
 
 ## Parametric Linear Model:
+
 ```{r echo = FALSE}
 x <- comparison_data$Mild_dyskaryosis
 y <- comparison_data$Moderate_dyskaryosis
@@ -473,6 +461,7 @@ coef(source_lasso)
 
 Y <- as.matrix(source_test[ , -exclude])
 suppressWarnings(source_predict <- predict(source_lasso, newx = Y))
+
 ```
 
 ```{r, include = FALSE}
@@ -484,6 +473,8 @@ mean(abs(source_errors))
 ```
 
 For the first lasso model, the independent variables acting as name tags for the data were removed so the model could be simplified and fitted to the best predictors. The goal of this model is to see if any variables within this data would be a good predictor of a severe dyskaryosis diagnosis. Looking at the R-squared of the lasso model, we see that the model explains 93.9% of the variability within the data which means the model is fitted very well to the data. However, looking at the RMSE and MAE, we see that the model is very lacking in its predictions. This can be because of the odd way the data is organized and collected.
+
+\pagebreak
 
 Some data within this dataset is taken across multiple year frames, while others are taken within the same year. The data also varies widely between the number of observations that are taken at each "location". The largely variability and inconsistency of the data could contribute to a high RMSE and MAE seen within the lasso model. 
 
@@ -527,11 +518,15 @@ The R-squared, RMSE, and MAE have all improved from the previous model. However,
 
 
 ## Chosen Model:
+
 Lasso Model, but linear regression and BIC shows strong correlation between severe dyskaryosis and borderline changes.
+
+\pagebreak
 
 # Appendix:
 ## Data Cleaning:
-```{r}
+
+```{r, eval = FALSE}
 source <- 
   read.csv("cervical-programme-annual-2022-23-csvs/kc61_sample_result_age_source.csv")
 
@@ -555,22 +550,26 @@ source$Indicator <- as.numeric(source$Indicator)
 severe_NA <- source[is.na(source$Severe_dyskaryosis) == FALSE, ]
 severe_NA$Severe_dyskaryosis <- as.numeric(severe_NA$Severe_dyskaryosis)
 
-comparison_data <- source[,c("Borderline_changes", "Mild_dyskaryosis", "Moderate_dyskaryosis","Severe_dyskaryosis")]
+comparison_data <- source[,c("Borderline_changes", "Mild_dyskaryosis",
+                             "Moderate_dyskaryosis","Severe_dyskaryosis")]
 comparison_data$Severe_dyskaryosis <- as.numeric(comparison_data$Severe_dyskaryosis)
 ```
 
 ## Subsetting Source Data:
-```{r}
+
+```{r, eval = FALSE}
 ## Subset source data for only borderline changes and mild, moderate, severe dyskaryosis
 
-comparison_data <- source[,c("Borderline_changes", "Mild_dyskaryosis", "Moderate_dyskaryosis","Severe_dyskaryosis")]
+comparison_data <- source[,c("Borderline_changes", "Mild_dyskaryosis",
+                             "Moderate_dyskaryosis","Severe_dyskaryosis")]
 comparison_data$Severe_dyskaryosis <- as.numeric(comparison_data$Severe_dyskaryosis)
 
 pairs(comparison_data)
 ```
 
 ## Scaled Linear Regression:
-```{r}
+
+```{r, eval = FALSE}
 scaled_data <- as.data.frame(scale(comparison_data))
 
 # mild dyskaryosis scaled
@@ -602,7 +601,8 @@ summary(scaled_severe_model)
 ```
 
 ## BIC MIC Model Comparison:
-```{r}
+
+```{r, eval = FALSE}
 #splitting data into test and train
 train_index <- 1:165
 test_index <- 166:nrow(comparison_data)
@@ -623,7 +623,7 @@ back_MIC <- step(train_model, direction = "backward",
 summary(back_MIC)
 ```
 
-```{r}
+```{r, eval = FALSE}
 test_MIC <- predict(back_MIC, test_frame)
 test_BIC <- predict(back_BIC, test_frame)
 
@@ -640,9 +640,65 @@ mean(abs(errors_MIC), na.rm = TRUE) #MAE for back_MIC
 mean(abs(errors_BIC), na.rm = TRUE) #MAE for back_BIC
 ```
 
+## Parametric Linear Model:
+
+```{r, eval = FALSE}
+x <- comparison_data$Mild_dyskaryosis
+y <- comparison_data$Moderate_dyskaryosis
+z <- comparison_data$Severe_dyskaryosis
+
+model_all <- lm(comparison_data$Borderline_changes ~ 
+                comparison_data$Mild_dyskaryosis +
+                comparison_data$Moderate_dyskaryosis +
+                comparison_data$Severe_dyskaryosis)
+
+#the following 2 models are identical, the first is included for code readability
+# and the second to make the summary coefficients more intuitive
+model_poly <- lm(comparison_data$Borderline_changes ~ 
+                    poly(comparison_data$Mild_dyskaryosis, 2, raw=T) + 
+                    poly(comparison_data$Moderate_dyskaryosis, 2, raw=T) + 
+                    poly(comparison_data$Severe_dyskaryosis, 2, raw=T))
+model_poly2 <- lm(comparison_data$Borderline_changes ~ 
+                    x + I(x^2) + y + I(y^2) + z + I(z^2))
+
+
+RSquaredValues <- NULL
+RSquaredValues["Model:All"] <- summary(model_all)$r.squared
+RSquaredValues["Model:Polynomial Order 2"] <- summary(model_poly2)$r.squared
+
+RSquaredValues
+summary(model_poly2)
+```
+
+```{r, eval = FALSE}
+Go <- length(predict(model_poly2))
+par(mfrow=c(1,3))
+plot(comparison_data$Borderline_changes, comparison_data$Mild_dyskaryosis,
+     xlim = c(0,15000), ylim = c(0,20000), col = rgb(0,0.5,0.5,0.6), pch = 19,
+     xlab = "Borderline Changes", ylab = "Mild Dyskaryosis")
+abline(h = 5000, col =rgb(0,0,0,0.5)) 
+#this line is at the y value that is the top of the other two graphs
+# to give a sense of size among the graphs
+lines(sort(predict(model_poly2)), col = rgb(0,0.25,0.25,0.75),
+      comparison_data$Mild_dyskaryosis[0:Go])
+
+plot(comparison_data$Borderline_changes, comparison_data$Moderate_dyskaryosis,
+     xlim = c(0,15000), ylim = c(0,5000), col = rgb(0.25,0.25,0.5,0.6), pch = 19,
+     xlab = "Borderline Changes", ylab = "Moderate Dyskaryosis")
+lines(sort(predict(model_poly2)), col = rgb(0.125,0.125,0.25,0.75),
+      comparison_data$Moderate_dyskaryosis[0:Go])
+
+plot(comparison_data$Borderline_changes, comparison_data$Severe_dyskaryosis,
+     xlim = c(0,15000), ylim = c(0,5000), col = rgb(0.5,0,0.5,0.6), pch = 19,
+     xlab = "Borderline Changes", ylab = "Severe Dyskaryosis")
+lines(sort(predict(model_poly2)), col = rgb(0.25,0,0.25,0.75),
+      comparison_data$Severe_dyskaryosis[0:Go])
+
+```
+
 ## Lasso Model:
 
-```{r}
+```{r, eval = FALSE}
 row_select <- sample(1:nrow(severe_NA), nrow(severe_NA) / 2)
 col_exclude <- c(1:6, 8, 17)
 
@@ -668,7 +724,7 @@ mean(abs(source_errors))
   
 ```
 
-```{r}
+```{r, eval = FALSE}
 lasso_data <- severe_NA[severe_NA$CollectionYearRange == "2022-23" &
                           suppressWarnings(severe_NA$Indicator == c(1:13)), ]
 row_select <- sample(1:nrow(lasso_data), nrow(lasso_data) / 2)
@@ -703,6 +759,8 @@ Data Cleaning: Paulina Yao
 Scaled Linear Regression: Anika Dachiraju
 
 BIC MIC Model Comparison: Raynah Cheng
+
+Parametric Linear Model: Jonathan Thomas
 
 Lasso Model: Paulina Yao
 
