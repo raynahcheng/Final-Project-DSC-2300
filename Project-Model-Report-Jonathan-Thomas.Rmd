@@ -30,6 +30,7 @@ comparison_data <- comparison_data[order(
 Model creation and evaluation:
 
 ```{r Model creation and evaluation}
+b <- comparison_data$Borderline_changes
 x <- comparison_data$Mild_dyskaryosis
 y <- comparison_data$Moderate_dyskaryosis
 z <- comparison_data$Severe_dyskaryosis
@@ -49,6 +50,7 @@ model_poly2 <- lm(comparison_data$Borderline_changes ~
                     x + I(x^2) + y + I(y^2) + z + I(z^2))
 
 
+
 RSquaredValues <- NULL
 RSquaredValues["Model:All"] <- summary(model_all)$r.squared
 RSquaredValues["Model:Polynomial Order 2"] <- summary(model_poly2)$r.squared
@@ -62,29 +64,30 @@ The $R^2$ values for the two models are 0.7831351 and 0.8968722. The parametric 
 The coefficients all are significant, yet the only coefficients that have an absolute value greater than 1 are the non-squared terms. This means the model was mostly only using the value of the `Mild_dyskaryosis` (`x` in the summary), `Moderate_dyskaryosis` (`y`), and `Severe_dyskaryosis` (`z`).
 
 ```{r}
-Go <- length(predict(model_poly2))
+model_test_X <- lm(x ~ poly(b, 2,  raw=T))
+model_test_Y <- lm(y ~ poly(b, 2,  raw=T))
+model_test_Z <- lm(z ~ poly(b, 2,  raw=T))
 par(mfrow=c(1,3))
-plot(comparison_data$Borderline_changes, comparison_data$Mild_dyskaryosis,
-     xlim = c(0,15000), ylim = c(0,20000), col = rgb(0,0.5,0.5,0.6), pch = 19,
+
+plot(b, x, xlim = c(0,15000), ylim = c(0,20000), 
+     col = rgb(0,0.5,0.5,0.6), pch = 19,
      xlab = "Borderline Changes", ylab = "Mild Dyskaryosis")
-abline(h = 5000, col =rgb(0,0,0,0.5)) 
-#this line is at the y value that is the top of the other two graphs
-# to give a sense of size among the graphs
-lines(sort(predict(model_poly2)), col = rgb(0,0.25,0.25,0.75),
-      comparison_data$Mild_dyskaryosis[0:Go])
+lines(predict(model_test_X), x, col = rgb(0,0.25,0.25,0.75))
 
-plot(comparison_data$Borderline_changes, comparison_data$Moderate_dyskaryosis,
-     xlim = c(0,15000), ylim = c(0,5000), col = rgb(0.25,0.25,0.5,0.6), pch = 19,
+
+plot(b, y,xlim = c(0,15000), ylim = c(0,5000),
+     col = rgb(0.25,0.25,0.5,0.6), pch = 19,
      xlab = "Borderline Changes", ylab = "Moderate Dyskaryosis")
-lines(sort(predict(model_poly2)), col = rgb(0.125,0.125,0.25,0.75),
-      comparison_data$Moderate_dyskaryosis[0:Go])
+lines(predict(model_test_Y), y, col = rgb(0.125,0.125,0.25,0.75))
 
-plot(comparison_data$Borderline_changes, comparison_data$Severe_dyskaryosis,
-     xlim = c(0,15000), ylim = c(0,5000), col = rgb(0.5,0,0.5,0.6), pch = 19,
+
+plot(b, z,xlim = c(0,15000), ylim = c(0,5000),
+     col = rgb(0.5,0,0.5,0.6), pch = 19,
      xlab = "Borderline Changes", ylab = "Severe Dyskaryosis")
-lines(sort(predict(model_poly2)), col = rgb(0.25,0,0.25,0.75),
-      comparison_data$Severe_dyskaryosis[0:Go])
+LEN <- length(sort(predict(model_test_Z)))
+lines(predict(model_test_Z), z[0:LEN], col = rgb(0.25,0,0.25,0.75))
 
+mtext("Parametric Model of Borderline Changes Against Mild/Moderate/Severe Dyskaryosis", side = 3, line = - 2, outer = TRUE)
 ```
 
 It is clear from these graphs that the model is over fitting to the data. The model may be fitting accurately to data points with lower amounts of borderline changes while inaccurately fitting to the data points with higher amounts of borderline changes. The high density of data at the lower end would allow the model to keep a high average $R^2$ value while being inaccurate at the higher end of the graphs. 
