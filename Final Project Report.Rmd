@@ -519,7 +519,7 @@ The R-squared, RMSE, and MAE have all improved from the previous model. However,
 
 ## Chosen Model:
 
-Lasso Model, but linear regression and BIC shows strong correlation between severe dyskaryosis and borderline changes.
+The Lasso model has the one of the highest R^2 values, as well as the lowest RMSE and MAE values. Therefore, we believe that this model would have the highest clinical significance in predicting severe dyskaryosis based on the variables singled out by the Lasso model. 
 
 \pagebreak
 
